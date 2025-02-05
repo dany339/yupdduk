@@ -36,7 +36,7 @@
 }
 
 .vison-title h4 {
-  font-size: 8.2rem;
+  font: 8.2rem/1.1 "Poppins", sans-serif;
   font-weight: 600;
   color: var(--main-color);
 }
@@ -47,8 +47,89 @@
   word-break: keep-all;
 }
 
+.vip .sec-title {
+  margin-top: 25.8rem;
+}
+
+.vip-service {
+  margin: 12rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 4.5rem;
+}
+
+.vip-service li {
+  width: 41rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  padding: 0 5.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background: no-repeat 50% / cover;
+  position: relative;
+  cursor: pointer;
+  word-break: keep-all;
+  box-shadow: 0px 0px 30px rgba(14, 33, 47, 0.55);
+}
+
+.vip-service li:nth-child(1) {
+  background-image: url(https://missha.com/static/img/brand/img_research1.png);
+}
+.vip-service li:nth-child(2) {
+  background-image: url(https://missha.com/static/img/brand/img_research2.png);
+}
+.vip-service li:nth-child(3) {
+  background-image: url(https://missha.com/static/img/brand/img_research3.png);
+}
+
+.vip-service li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--main-color60);
+  transition: 0.4s;
+}
+
+.vip-service li:hover::after {
+  content: "";
+  background: var(--main-color);
+}
+
+.vip-service dl {
+  position: relative;
+  z-index: 1;
+}
+
+.vip-service dt {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--white100);
+  transform: translateY(75%);
+  transition: 0.5s;
+}
+
+.vip-service li:hover dt {
+  transform: translateY(0);
+}
+
+.vip-service dd {
+  margin-top: 2.3rem;
+  transform: translateY(350%);
+  color: var(--white70);
+  transition: 0.5s;
+}
+.vip-service li:hover dd {
+  transform: translateY(0);
+}
+
 .story {
-  background: url(https://www.laneige.com/kr/ko/assets/image/brand/brand-story/story-2024_img_0001_pc_kr_241210.jpg)
+  background: url(https://missha.com/upload/main/brandstory/20240626105144e0e7a300-7b8a-4d11-8add-99aeb529eb73.jpg)
     no-repeat 50% / cover;
   padding: 21.2rem 0 20rem 0;
   position: relative;
@@ -65,8 +146,8 @@
   height: 100%;
   background: linear-gradient(
     to right,
-    rgba(64, 118, 255, 1),
-    rgba(64, 118, 255, 0.2)
+    rgba(14, 27, 47, 1),
+    rgba(14, 27, 47, 0.2)
   );
 }
 
@@ -94,165 +175,150 @@
   z-index: 1;
 }
 
+.story .p5 {
+  color: var(--white40);
+}
+
 .story b {
   font-size: 2.2rem;
   font-weight: 600;
   color: var(--white100);
 }
 
-.store {
-  margin-top: 9rem;
-  background: linear-gradient(
-    to right,
-    rgba(64, 118, 255, 1),
-    rgba(64, 118, 255, 0.2)
-  );
-  height: 38rem;
-  padding: 7.6rem 0 0 0;
+.tip {
+  margin-bottom: 17.5rem;
 }
 
-.store-wrap {
+.tip .sec-title {
+  margin-top: 10.4167vw;
+}
+
+.tip-list {
+  margin-top: 7.5758%;
   display: flex;
   justify-content: space-between;
+  gap: 2rem;
 }
 
-.store-txt {
-  width: 50rem;
-}
-
-.store-txt .sec-title {
-  color: var(--white100);
-}
-.store-txt .sec-title strong {
-  color: var(--white100);
-}
-
-.store-txt p {
-  color: var(--white70);
+.tip-list li {
+  /* border: 1px solid #000; */
+  width: 31.5rem;
+  aspect-ratio: 1/1.6825;
+  padding: 3rem;
   word-break: keep-all;
-  margin-top: 1.5rem;
-}
-
-.walter-friends {
-  display: flex;
-  align-items: flex-end;
-  position: relative;
-  transform: translateX(20rem);
-}
-
-.walter-friends figure {
-  position: absolute;
-  top: 3rem;
-  right: 0;
-  width: 74.2rem;
-  height: 31.5rem;
-  transform: translateY(13rem);
-  transition: 0.4s;
-  opacity: 0;
-}
-
-.store:hover .walter-friends figure,
-.walter-friends figure.on {
-  transform: translateY(0);
-  opacity: 1;
-  height: 31.5rem;
-}
-
-.vip .sec-title {
-  margin-top: 25.8rem;
-}
-
-.vip-service {
-  margin-top: 12rem;
-  display: flex;
-  justify-content: center;
-  gap: 4.5rem;
-}
-
-.vip-service li {
-  width: 41rem;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  padding: 0 5.4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  border-radius: 10px;
   overflow: hidden;
   background: no-repeat 50% / cover;
   position: relative;
-  cursor: pointer;
-  word-break: keep-all;
-  box-shadow: 0px 0px 30px rgba(14, 33, 47, 0.55);
+  text-align: center;
 }
 
-.vip-service li:nth-child(1) {
-  background-image: url(https://www.laneige.com/kr/ko/assets/image/brand/walter-friends/friends-walter-02.png);
-}
-.vip-service li:nth-child(2) {
-  background-image: url(https://www.laneige.com/kr/ko/assets/image/brand/walter-friends/friends-dambi-02.png);
-}
-.vip-service li:nth-child(3) {
-  background-image: url(https://www.laneige.com/kr/ko/assets/image/brand/walter-friends/friends-seal-02.png);
-}
-.vip-service li:nth-child(4) {
-  background-image: url(https://www.laneige.com/kr/ko/assets/image/brand/walter-friends/friends-noon-02.png);
+.tip-list li:hover {
+  justify-content: center;
 }
 
-.vip-service li:hover:nth-child(1) {
-  background-image: url(https://www.laneige.com/kr/ko/assets/image/brand/walter-friends/friends-walter-01.png);
+.tip-list li:nth-child(1) {
+  background-image: url(https://missha.com/static/img/brand/his1.png);
 }
-.vip-service li:hover:nth-child(2) {
-  background-image: url(https://www.laneige.com/kr/ko/assets/image/brand/walter-friends/friends-dambi-01.png);
+.tip-list li:nth-child(2) {
+  background-image: url(https://missha.com/static/img/brand/his2.png);
 }
-.vip-service li:hover:nth-child(3) {
-  background-image: url(https://www.laneige.com/kr/ko/assets/image/brand/walter-friends/friends-seal-01.png);
+.tip-list li:nth-child(3) {
+  background-image: url(https://missha.com/static/img/brand/his3.png);
 }
-.vip-service li:hover:nth-child(4) {
-  background-image: url(https://www.laneige.com/kr/ko/assets/image/brand/walter-friends/friends-noon-01.png);
+.tip-list li:nth-child(4) {
+  background-image: url(https://missha.com/static/img/brand/his4.png);
+}
+.tip-list li:nth-child(5) {
+  background-image: url(https://missha.com/static/img/brand/his5.png);
 }
 
-.vip-service li::after {
+.tip-list li::after {
   content: "";
+  transition: 0.7s;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(14, 27, 47, 0),
+    rgba(14, 27, 47, 0),
+    rgba(14, 27, 47, 0.7)
+  );
+}
+
+.tip-list li:hover::after {
+  content: "";
+  height: 100%;
+  background: var(--main-color70);
+}
+
+.tip-list li strong {
+  /* font-size: 2.8rem; */
+  font-size: clamp(2.4rem, 8.8888%, 2.8rem);
+  font-weight: 700;
+  color: var(--white100);
+  position: relative;
+  z-index: 1;
+  top: 90%;
   transition: 0.4s;
 }
 
-.vip-service li:hover::after {
-  content: "";
-  height: 100%;
-  background: var(--main-color60);
-}
-
-.vip-service dl {
+.tip-list li p {
+  margin-top: 2rem;
+  color: var(--white70);
   position: relative;
   z-index: 1;
-  opacity: 0;
-}
-.vip-service li:hover dl {
-  opacity: 1;
+  top: 120%;
 }
 
-.vip-service dt {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--white100);
-  transform: translateY(130%);
-  transition: 0.5s;
+.tip-list li:hover strong {
+  /* font-size: 3rem; */
+  font-size: clamp(2.6rem, 9%, 3rem);
+  top: 35%;
 }
 
-.vip-service li:hover dt {
-  transform: translateY(0);
+.tip-list li:hover p {
+  top: 35%;
+  transition: 0.6s;
 }
 
-.vip-service dd {
-  transform: translateY(350%);
-  color: var(--white70);
-  transition: 0.5s;
+@media (max-width: 1320px) {
+  .tip .sec-title {
+    margin-top: 10rem;
+  }
+
+  .tip-list {
+    flex-direction: column;
+  }
+
+  .tip-list li {
+    width: 100%;
+    aspect-ratio: 1/0.3333;
+  }
+
+  .tip-list li strong {
+    top: 80%;
+  }
+
+  .tip-list li p {
+    margin-top: 2%;
+  }
 }
-.vip-service li:hover dd {
-  transform: translateY(0);
+
+@media (max-width: 600px) {
+  .tip-list li {
+    width: 100%;
+    aspect-ratio: 1/0.5;
+  }
+
+  .tip-list li:hover strong {
+    top: 8vw;
+  }
+
+  .tip-list li:hover p {
+    top: 8vw;
+  }
 }

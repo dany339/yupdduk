@@ -17,6 +17,7 @@
   --white70: rgba(255, 255, 255, 0.7);
   --white50: rgba(255, 255, 255, 0.5);
   --white40: rgba(255, 255, 255, 0.4);
+  --white20: rgba(255, 255, 255, 0.2);
   --white10: rgba(255, 255, 255, 0.1);
   --black50: rgba(0, 0, 0, 0.5);
   --black40: rgba(0, 0, 0, 0.4);
@@ -401,7 +402,6 @@ body {
   width: 23%;
   height: 100vh;
 }
-
 .gnb-menu {
   width: 73%;
   padding: 20rem 0 20rem 6.927vw;
@@ -477,6 +477,9 @@ body {
 }
 
 /* footer */
+footer {
+  background: var(--main-color);
+}
 
 .foot-list {
   display: flex;
@@ -492,7 +495,7 @@ body {
   top: 0;
   width: 100vw;
   height: 1px;
-  background: var(--black20);
+  background: var(--white20);
 }
 
 .foot-list::after {
@@ -502,7 +505,7 @@ body {
   bottom: 0;
   width: 100vw;
   height: 1px;
-  background: var(--black20);
+  background: var(--white20);
 }
 
 .foot-info {
@@ -542,6 +545,7 @@ body {
   background: var(--white100);
   border: 2px solid var(--black20);
   border-radius: 10px;
+  width: 16.7rem;
   padding: 2rem 3rem;
   margin-top: 4.2rem;
   position: absolute;
@@ -577,7 +581,7 @@ body {
 
 .foot-con address strong {
   font-weight: 700;
-  color: var(--title-color);
+  color: var(--white40);
 }
 
 .foot-con address p {
@@ -598,7 +602,7 @@ body {
 }
 
 .accredit figure {
-  width: 7.4rem;
+  width: 16rem;
   aspect-ratio: 1/1;
 }
 
@@ -722,19 +726,6 @@ body {
     flex-direction: column;
   }
 
-  /* .main-menu li {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .main-menu li::after {
-        content: "";
-        display: block;
-        width: 2.4rem;
-        aspect-ratio: 1/1;
-        background: url(../img/arrow-m-right.png) no-repeat 50% 30%;
-    } */
-
   .btn-close {
     margin: 2rem 48vw 0 0;
   }
@@ -745,10 +736,6 @@ body {
 
   .btn-main {
     left: 18%;
-  }
-
-  .map-area div::after {
-    right: 30%;
   }
 }
 
