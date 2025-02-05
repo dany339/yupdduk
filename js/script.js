@@ -18,20 +18,9 @@ if ($(".btn-family").length && $(".family-list").length) {
   const familyList = $(".family-list");
   const duration = 300;
 
-  // 초기 위치 설정 - family-list를 버튼 위로 위치시킴
-  familyList.css({
-    bottom: "100%",
-    position: "absolute",
-    display: "none",
-  });
-
   family.on("click", function () {
     familyList.toggleClass("on");
-    if (familyList.hasClass("on")) {
-      familyList.slideDown(duration);
-    } else {
-      familyList.slideUp(duration);
-    }
+    familyList.slideToggle(duration);
   });
 }
 
@@ -209,7 +198,7 @@ function menuTabAction(index) {
 // allergie swiper(MENU)
 if ($(".allergie-slider").length) {
   const allergieSwiper = new Swiper(".allergie-slider", {
-    slidesPerView: 3,
+    slidesPerView: 2,
     spaceBetween: 20,
     loop: true,
     autoplay: {
@@ -222,11 +211,11 @@ if ($(".allergie-slider").length) {
 
     breakpoints: {
       1100: {
-        slidesPerView: 6,
+        slidesPerView: 4,
         spaceBetween: 20,
       },
       700: {
-        slidesPerView: 5,
+        slidesPerView: 3,
         spaceBetween: 20,
       },
     },

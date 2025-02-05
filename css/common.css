@@ -4,13 +4,13 @@
 
 :root {
   font-size: 62.5%;
-  --main-color: #4076ff;
-  --main-color80: rgba(64, 118, 255, 0.8);
-  --main-color70: rgba(64, 118, 255, 0.7);
-  --main-color60: rgba(64, 118, 255, 0.6);
-  --main-color40: rgba(64, 118, 255, 0.4);
-  --main-color15: rgba(64, 118, 255, 0.15);
-  --main-color10: rgba(64, 118, 255, 0.1);
+  --main-color: #0e1b2f;
+  --main-color80: rgba(14, 27, 47, 0.8);
+  --main-color70: rgba(14, 27, 47, 0.7);
+  --main-color60: rgba(14, 27, 47, 0.6);
+  --main-color40: rgba(14, 27, 47, 0.4);
+  --main-color15: rgba(14, 27, 47, 0.15);
+  --main-color10: rgba(14, 27, 47, 0.1);
   --title-color: #272727;
   --text-color: #666666;
   --white100: rgba(255, 255, 255, 1);
@@ -548,6 +548,7 @@ body {
   user-select: none;
   pointer-events: none;
   display: none;
+  z-index: 1;
 }
 
 .family-list li:first-child a {
