@@ -4,6 +4,41 @@
   display: none;
 }
 
+.main-pic {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-pic::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color10);
+}
+
+.main-title {
+  display: block;
+  width: 45.8333vw;
+  min-width: 61.4rem;
+  height: 19.2rem;
+  background: url(../img/logo-w.svg) no-repeat 50% / contain;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.visual-title p {
+  margin-top: 18rem;
+}
+
 .slider-menu-wrap {
   /* background: #ff5; */
   /* padding: 23.8rem 0; */
@@ -33,6 +68,7 @@
 
 .menu-text-card h3 {
   font: 8rem/1.1 "Poppins", sans-serif;
+  font-size: clamp(5rem, 2vw, 8rem);
   font-weight: 700;
   color: var(--title-color);
   word-break: keep-all;
@@ -137,50 +173,6 @@
 
 .event-swiper figure:hover::after {
   opacity: 1;
-}
-
-.arrivalas-name {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  padding: 5.5rem 4rem;
-  color: var(--white100);
-  user-select: none;
-  pointer-events: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  opacity: 0;
-}
-
-.arrivalas-txt strong {
-  font-size: 2.8rem;
-}
-.arrivalas-txt p {
-  margin-top: 1rem;
-  font: 1.4 "Poppins", sans-serif;
-  font-size: 1.8rem;
-  font-weight: 400;
-}
-
-.event-swiper figure:hover .arrivalas-name {
-  opacity: 1;
-}
-
-/* .event .arrivalas-tag p:first-child {
-  margin-top: 3rem;
-} */
-
-.arrivalas-tag p {
-  padding: 0.4rem 2rem;
-  background: var(--white50);
-  color: var(--main-color);
-  margin-top: 1rem;
-  border-radius: 3rem;
 }
 
 .allergie {

@@ -48,18 +48,21 @@
 }
 
 .vip .sec-title {
-  margin-top: 25.8rem;
+  margin-top: 13.4375vw;
 }
 
 .vip-service {
-  margin: 12rem 0;
+  margin: 7.8125vw 0;
   display: flex;
   justify-content: center;
-  gap: 4.5rem;
+  gap: 3rem;
+  flex-shrink: 0;
+  overflow-x: auto;
 }
 
 .vip-service li {
   width: 41rem;
+  min-width: 33.5rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
   padding: 0 5.4rem;
@@ -128,6 +131,10 @@
   transform: translateY(0);
 }
 
+.story .inner {
+  overflow: hidden;
+}
+
 .story {
   background: url(https://missha.com/upload/main/brandstory/20240626105144e0e7a300-7b8a-4d11-8add-99aeb529eb73.jpg)
     no-repeat 50% / cover;
@@ -167,7 +174,7 @@
 
 .story p {
   width: 50%;
-  font-size: 2rem;
+  font-size: clamp(2rem, 2.2vw, 2.2rem);
   color: var(--white70);
   word-break: keep-all;
   margin-top: 2.8rem;
@@ -180,7 +187,7 @@
 }
 
 .story b {
-  font-size: 2.2rem;
+  font-size: clamp(2rem, 2.2vw, 2.2rem);
   font-weight: 600;
   color: var(--white100);
 }
@@ -285,7 +292,31 @@
   transition: 0.6s;
 }
 
-@media (max-width: 1320px) {
+@keyframes move {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4%);
+  }
+}
+
+@media (max-width: 1800px) {
+  .vison-title::before,
+  .vison-title::after {
+    width: 18rem;
+    height: 13rem;
+    background-size: contain;
+  }
+}
+
+@media (max-width: 1400px) {
+  .vison-title::before,
+  .vison-title::after {
+    display: none;
+  }
+
   .tip .sec-title {
     margin-top: 10rem;
   }
@@ -308,7 +339,45 @@
   }
 }
 
+@media (max-width: 1350px) {
+  .vip-service {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 1000px) {
+  .store-txt {
+    width: 80%;
+  }
+}
+
+@media (max-width: 800px) {
+  .vison-title p {
+    width: 80%;
+  }
+
+  .slider {
+    height: 55vh;
+  }
+
+  .story .sec-title h3 {
+    width: 100%;
+  }
+
+  .store-txt {
+    width: 100%;
+  }
+
+  .story p {
+    width: 90%;
+  }
+}
+
 @media (max-width: 600px) {
+  .store {
+    height: 40rem;
+  }
+
   .tip-list li {
     width: 100%;
     aspect-ratio: 1/0.5;
