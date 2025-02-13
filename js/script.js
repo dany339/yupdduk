@@ -1,15 +1,53 @@
 /* 공통!!!---------------------------------------------- */
 
-const btnMenu = $(".btn-menu");
-const btnClose = $(".btn-close");
-const gnb = $(".gnb");
+// GNB
+const $header = $("header");
+const $menu = $(".gnb > li");
+const $submenu = $(".submenu");
+const duration = 300;
 
-btnMenu.on("click", function () {
-  gnb.addClass("on");
+$menu.on("mouseenter", function () {
+  $(this).addClass("on");
+  $header.addClass("active");
+  $submenu.stop().slideDown(duration);
 });
 
-btnClose.on("click", function () {
-  gnb.removeClass("on");
+$menu.on("mouseleave", function () {
+  $(this).removeClass("on");
+  $header.removeClass("active");
+  $submenu.stop().slideUp(duration);
+});
+
+//모바일 버전의 GNB!!
+// 모바일 메뉴 기능
+const $btnMenu = $(".btn-menu");
+const $btnClose = $(".btn-close");
+const $mobileMenu = $(".mobile-menu");
+const $mobileGnb = $(".mobile-gnb > li > a");
+
+$btnMenu.on("click", function () {
+  $mobileMenu.addClass("on");
+  $("body").css("overflow", "hidden"); // 스크롤 방지
+});
+
+$btnClose.on("click", function () {
+  $mobileMenu.removeClass("on");
+  $("body").css("overflow", "auto"); // 스크롤 복구
+});
+
+// 모바일 서브메뉴 토글
+$mobileGnb.on("click", function (e) {
+  e.preventDefault();
+  $(this).next(".mobile-submenu").slideToggle(300);
+  $(this).parent().siblings().find(".mobile-submenu").slideUp(300);
+});
+
+// 모바일 메뉴 외부 영역 클릭시 닫기
+$(document).on("click", function (e) {
+  if (!$(e.target).closest(".mobile-menu, .btn-menu").length) {
+    $mobileMenu.removeClass("on");
+    $("body").css("overflow", "auto");
+  }
 });
 
 // foot family 기능
@@ -54,9 +92,8 @@ visualTl.from(".bread", { y: 50, autoAlpha: 0 }, "-=0.6");
 function handleMouseMove(e) {
   const cursor = document.querySelector(".cursor");
   const menuConSliderWrap = document.querySelector(".menu-con-slider-wrap");
-  const eventSwipers = document.querySelectorAll(".event-swiper");
 
-  if (cursor && menuConSliderWrap && eventSwipers) {
+  if (cursor && menuConSliderWrap) {
     const mouseX = e.clientX;
     const mouseY = e.clientY;
 
@@ -64,25 +101,14 @@ function handleMouseMove(e) {
     cursor.style.top = `${mouseY}px`;
 
     const menuRect = menuConSliderWrap.getBoundingClientRect();
-    let isCursorVisible = false;
 
-    eventSwipers.forEach((eventSwiper) => {
-      const eventRect = eventSwiper.getBoundingClientRect();
-      if (
-        (mouseX >= eventRect.left &&
-          mouseX <= eventRect.right &&
-          mouseY >= eventRect.top &&
-          mouseY <= eventRect.bottom) ||
-        (mouseX >= menuRect.left &&
-          mouseX <= menuRect.right &&
-          mouseY >= menuRect.top &&
-          mouseY <= menuRect.bottom)
-      ) {
-        isCursorVisible = true;
-      }
-    });
-
-    if (isCursorVisible) {
+    // menu-con-slider-wrap 또는 allergie-slider-wrap 영역에 마우스가 있는지 확인
+    if (
+      mouseX >= menuRect.left &&
+      mouseX <= menuRect.right &&
+      mouseY >= menuRect.top &&
+      mouseY <= menuRect.bottom
+    ) {
       cursor.style.opacity = "1";
     } else {
       cursor.style.opacity = "0";
@@ -115,90 +141,13 @@ if ($(".menu-con-slider").length) {
     },
   });
 }
-// event swiper(MAIN)
-if ($(".event-swiper").length) {
-  const $eventSwiper = new Swiper(".event-swiper", {
-    loop: true,
-    slidesPerView: "1",
-    spaceBetween: 20,
-    autoplay: {
-      delay: 1000,
-    },
-
-    breakpoints: {
-      600: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      800: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-      1300: {
-        slidesPerView: 4.9,
-        spaceBetween: 20,
-      },
-    },
-  });
-}
-
-// event tab(MAIN)
-
-const $eventTabMenu = $(".event-tab > li");
-const $eventTabCon = $(".event-list");
-
-$eventTabCon.hide();
-$eventTabCon.eq(0).show();
-$eventTabMenu.eq(0).find("a").addClass("on");
-
-$eventTabMenu.on("click", function (e) {
-  e.preventDefault();
-
-  const eventTabIdx = $(this).index();
-
-  $eventTabMenu.find("a").removeClass("on");
-  $(this).find("a").addClass("on");
-
-  $eventTabCon.hide();
-  $eventTabCon.eq(eventTabIdx).show();
-
-  if (eventTabIdx === 0 && window.eventSwiper) {
-    window.eventSwiper.update();
-  }
-});
 
 /* MENU!!!---------------------------------------------- */
-
-// menu-tab(MENU)
-const $menuTabMenu = $(".menu-tab > li");
-const $menuTabCon = $(".menu-con");
-
-menuTabAction(0);
-
-$menuTabMenu.on("click", function (e) {
-  e.preventDefault();
-
-  const menuTabIdx = $(this).index();
-  console.log(menuTabIdx);
-
-  menuTabAction(menuTabIdx);
-});
-
-// 공통의 동작을 함수로 정의
-function menuTabAction(index) {
-  // 탭메뉴 활성화
-  $menuTabMenu.removeClass("on");
-  $menuTabMenu.eq(index).addClass("on");
-
-  // 인덱스에 해당하는 $tabCon 보이기
-  $menuTabCon.hide();
-  $menuTabCon.eq(index).show();
-}
 
 // allergie swiper(MENU)
 if ($(".allergie-slider").length) {
   const allergieSwiper = new Swiper(".allergie-slider", {
-    slidesPerView: 2,
+    slidesPerView: 3,
     spaceBetween: 20,
     loop: true,
     autoplay: {
@@ -210,12 +159,16 @@ if ($(".allergie-slider").length) {
     },
 
     breakpoints: {
-      1100: {
-        slidesPerView: 4,
+      1300: {
+        slidesPerView: 8,
+        spaceBetween: 20,
+      },
+      830: {
+        slidesPerView: 6,
         spaceBetween: 20,
       },
       700: {
-        slidesPerView: 3,
+        slidesPerView: 4,
         spaceBetween: 20,
       },
     },
@@ -239,26 +192,6 @@ $menuItem.on("click", function () {
   // $(this).find($answer).slideDown(duration);
   // 선택한 놈의 자손중 답변을 찾아서 슬라이드 토글
   $(menuList).find($menuItem).stop().slideToggle(duration);
-});
-
-// price tab(MENU)
-const $priceTabMenu = $(".price-tab > li");
-const $priceTabCon = $(".price-con-item");
-
-$priceTabCon.hide();
-$priceTabCon.eq(0).show();
-$priceTabMenu.eq(0).find("a").addClass("on");
-
-$priceTabMenu.on("click", function (e) {
-  e.preventDefault();
-
-  const idx = $(this).index();
-
-  $priceTabMenu.find("a").removeClass("on");
-  $(this).find("a").addClass("on");
-
-  $priceTabCon.hide();
-  $priceTabCon.eq(idx).show();
 });
 
 /* REWARDS!!!---------------------------------------------- */
@@ -349,6 +282,15 @@ $footerSection.on("mouseenter", function () {
 
 $footerSection.on("mouseleave", function () {
   $(".app-store figure").removeClass("on");
+});
+
+/* MAP!!!---------------------------------------------- */
+
+const $mapSearch = $(".map-search");
+const $btnFold = $(".btn-fold");
+
+$btnFold.on("click", function () {
+  $mapSearch.toggleClass("on"); // Toggle the 'on' class for .map-search
 });
 
 // TOP 버튼

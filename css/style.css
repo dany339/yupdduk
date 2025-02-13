@@ -4,41 +4,6 @@
   display: none;
 }
 
-.main-pic {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.main-pic::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--main-color10);
-}
-
-.main-title {
-  display: block;
-  width: 45.8333vw;
-  min-width: 61.4rem;
-  height: 19.2rem;
-  background: url(../img/logo-w.svg) no-repeat 50% / contain;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-
-.visual-title p {
-  margin-top: 18rem;
-}
-
 .slider-menu-wrap {
   /* background: #ff5; */
   /* padding: 23.8rem 0; */
@@ -68,14 +33,14 @@
 
 .menu-text-card h3 {
   font: 8rem/1.1 "Poppins", sans-serif;
-  font-size: clamp(5rem, 2vw, 8rem);
+  font-size: clamp(5rem, 7vw, 11rem);
   font-weight: 700;
   color: var(--title-color);
   word-break: keep-all;
 }
 
 .menu-text-card p {
-  width: 23.2813vw;
+  width: 30vw;
   margin-top: 0.7rem;
   word-break: keep-all;
 }
@@ -132,51 +97,8 @@
   opacity: 0;
 }
 
-.event .tab-con {
-  margin-top: 4vw;
-}
-
-.event .view-more {
-  margin-left: 2rem;
-}
-
-.event-list {
-  /* margin-top: 2rem; */
-  margin-top: 1.0417vw;
-  padding: 0 2rem;
-}
-
-.event-swiper figure {
-  margin-top: 2.6rem;
-  /* width: 37.8rem; */
-  /* width: 19.6875vw; */
-  width: 100%;
-  aspect-ratio: 1/1.09259;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  cursor: none;
-  box-shadow: 5px 6px 11px rgba(0, 0, 0, 0.25);
-}
-
-.event-swiper figure::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--main-color70);
-  transition: 0.4s;
-  opacity: 0;
-}
-
-.event-swiper figure:hover::after {
-  opacity: 1;
-}
-
 .allergie {
-  margin-bottom: 17.5rem;
+  margin-bottom: 19.5rem;
 }
 
 .allergie-slider-wrap {
