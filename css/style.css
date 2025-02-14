@@ -7,7 +7,8 @@
 .slider-menu-wrap {
   /* background: #ff5; */
   /* padding: 23.8rem 0; */
-  padding: 12.3958vw 0;
+  padding-top: 12.3958vw;
+  padding-top: 25rem;
   display: flex;
   gap: 2rem;
   /* border: 1px solid #000; */
@@ -29,19 +30,21 @@
   font-weight: 700;
   font-size: 2rem;
   color: var(--main-color);
+  margin-top: 2rem;
 }
 
 .menu-text-card h3 {
-  font: 8rem/1.1 "Poppins", sans-serif;
-  font-size: clamp(5rem, 7vw, 11rem);
+  font: 9rem/1.1 "Poppins", sans-serif;
+  font-size: clamp(5rem, 5vw, 9rem);
   font-weight: 700;
   color: var(--title-color);
   word-break: keep-all;
+  margin-top: 2.8rem;
 }
 
 .menu-text-card p {
   width: 30vw;
-  margin-top: 0.7rem;
+  margin-top: 1.5rem;
   word-break: keep-all;
 }
 
@@ -98,7 +101,7 @@
 }
 
 .allergie {
-  margin-bottom: 19.5rem;
+  margin: 12rem 0;
 }
 
 .allergie-slider-wrap {
@@ -111,10 +114,6 @@
 
 .allergie .swiper-wrapper {
   width: 100%;
-}
-
-.allergie-txt {
-  margin-top: 10.4167vw;
 }
 
 .allergie-txt p {
@@ -221,7 +220,7 @@
   }
 
   .menu-text-card p {
-    width: 100%;
+    width: 90%;
   }
 }
 

@@ -27,8 +27,9 @@
 .menu-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(27.5rem, 1fr));
-  margin-top: 10rem;
-  gap: 2.6042vw;
+  margin-top: 8rem;
+  gap: 4rem;
+  justify-items: center;
 }
 
 .menu-list li figure {
@@ -36,7 +37,7 @@
   height: 29rem;
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 1.5rem;
+  margin: 1.0416vw 0 1.5rem 0;
 }
 
 .menu-list li:hover img {

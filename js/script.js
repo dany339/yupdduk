@@ -199,17 +199,6 @@ $menuItem.on("click", function () {
 const $snsTabMenu = $(".sns-tab > li");
 const $snsTabCon = $(".sns .sns-list");
 
-snsTabAction(1);
-
-$snsTabMenu.on("click", function (e) {
-  e.preventDefault();
-
-  const snsTabIdx = $(this).index();
-  console.log(snsTabIdx);
-
-  snsTabAction(snsTabIdx);
-});
-
 // 공통의 동작을 함수로 정의
 function snsTabAction(index) {
   // 탭메뉴 활성화
@@ -224,7 +213,7 @@ function snsTabAction(index) {
 const $appTabMenu = $(".app-tab > li");
 const $appTabCon = $(".app-con");
 
-let currentAppIndex = 0; // 현재 인덱스를 추적하는 변수
+let currentAppIndex = 1; // 현재 인덱스를 추적하는 변수
 appTabAction(currentAppIndex);
 
 $appTabMenu.on("click", function (e) {

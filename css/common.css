@@ -9,7 +9,7 @@
   --main-color70: rgba(192, 199, 156, 0.7);
   --main-color60: rgba(192, 199, 156, 0.6);
   --main-color40: rgba(192, 199, 156, 0.4);
-  --main-color15: rgba(192, 199, 156, 0.15);
+  --main-color20: rgba(192, 199, 156, 0.2);
   --main-color10: rgba(192, 199, 156, 0.1);
   --title-color: #272727;
   --text-color: #666666;
@@ -287,9 +287,10 @@ header::after {
   top: -33.4rem;
   left: 0;
   width: 100%;
-  height: 33.4rem;
-  background: #fff;
+  height: 40rem;
   transition: 0.3s;
+  background: #fff;
+
   z-index: 2;
 }
 
@@ -321,8 +322,8 @@ nav::before {
 
 .logo a {
   display: block;
-  width: 11rem;
-  height: 2.5rem;
+  width: 21rem;
+  height: 3rem;
   background: url(../img/logo.svg) no-repeat 0 0 / contain;
 }
 
@@ -474,6 +475,23 @@ nav::before {
 }
 .btn-close:hover .bar2 {
   transform: rotate(0);
+}
+
+.sns-ico-list {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.btn-instagram {
+  width: 3rem;
+  height: 3rem;
+  background: url(../img/sns-ico-instargram.svg) no-repeat 50% / contain;
+}
+
+.btn-facebook {
+  width: 3rem;
+  height: 3rem;
+  background: url(../img/sns-ico-facebook.svg) no-repeat 50% / contain;
 }
 
 /* 모바일 메뉴~!!!! */
@@ -651,8 +669,8 @@ nav::before {
 }
 
 .accredit figure {
-  width: 7.4rem;
-  aspect-ratio: 1/1;
+  width: 21rem;
+  aspect-ratio: 1/0.1429;
 }
 
 .accredit figure img {
@@ -707,7 +725,7 @@ nav::before {
 
 .visual-title h2 {
   font: 9.6rem/1.2 "Poppins", sans-serif;
-  font-size: clamp(6.5rem, 9.1146vw, 17.5rem);
+  font-size: clamp(6.5rem, 11.1146vw, 17.5rem);
   font-weight: 700;
 }
 
@@ -715,7 +733,7 @@ nav::before {
   /* width: 56rem; */
   width: 40%;
   font-size: 3rem;
-  font-size: clamp(2.2rem, 1.5625vw, 3rem);
+  font-size: clamp(2.2rem, 3.5625vw, 3rem);
   font-weight: 500;
   margin: 0 auto;
   margin-top: 1rem;
@@ -858,12 +876,11 @@ nav::before {
     width: 100vw;
     height: 10rem;
     padding: 0 3rem;
-    max-width: 100vw; /* 추가된 속성 */
     background: transparent;
   }
 
   nav {
-    margin: 0 2rem;
+    margin: 0;
   }
 
   .logo a {
@@ -871,7 +888,7 @@ nav::before {
     transform: rotate(0deg);
   }
 
-  .sns-list {
+  .sns-ico-list {
     display: none;
   }
 
@@ -885,6 +902,10 @@ nav::before {
 
   .visual-title p {
     width: 80%;
+  }
+
+  .mobile-sns-ico-list {
+    margin-top: 3rem;
   }
 
   .foot-list {
