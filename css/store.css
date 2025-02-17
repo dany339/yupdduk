@@ -12,7 +12,7 @@
 }
 
 .map-view iframe {
-  height: 100vh;
+  height: 87vh;
 }
 
 .map-search {
@@ -30,7 +30,7 @@
 .btn-fold {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 38%;
   right: 63rem;
   width: 4rem;
   height: 13.6rem;
@@ -52,6 +52,35 @@
   margin-top: 5rem;
 }
 
+/* map */
+
+.map-info > li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.8rem 0 3rem 0;
+  border-bottom: 1px solid var(--black20);
+}
+
+.map-info dl dt {
+  font-weight: 700;
+  color: var(--title-color);
+}
+
+.map-info dl dd {
+  font-size: 1.6rem;
+  word-break: keep-all;
+}
+
+@media (max-width: 1800px) {
+  .map-wrap {
+    flex-direction: column;
+  }
+
+  .map-search {
+    width: 100%;
+  }
+}
 @media (max-width: 1000px) {
   .map-search {
     top: auto;

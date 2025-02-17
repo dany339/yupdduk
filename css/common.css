@@ -4,13 +4,13 @@
 
 :root {
   font-size: 62.5%;
-  --main-color: #c0c79c;
-  --main-color80: rgba(192, 199, 156, 0.8);
-  --main-color70: rgba(192, 199, 156, 0.7);
-  --main-color60: rgba(192, 199, 156, 0.6);
-  --main-color40: rgba(192, 199, 156, 0.4);
-  --main-color20: rgba(192, 199, 156, 0.2);
-  --main-color10: rgba(192, 199, 156, 0.1);
+  --main-color: #be161e;
+  --main-color80: rgba(190, 22, 30, 0.8);
+  --main-color70: rgba(190, 22, 30, 0.7);
+  --main-color60: rgba(190, 22, 30, 0.6);
+  --main-color40: rgba(190, 22, 30, 0.4);
+  --main-color20: rgba(190, 22, 30, 0.2);
+  --main-color10: rgba(190, 22, 30, 0.1);
   --title-color: #272727;
   --text-color: #666666;
   --white100: rgba(255, 255, 255, 1);
@@ -65,6 +65,12 @@ img {
   height: 100%;
   object-fit: cover;
   transition: 0.4s;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 iframe {
@@ -494,6 +500,12 @@ nav::before {
   background: url(../img/sns-ico-facebook.svg) no-repeat 50% / contain;
 }
 
+.btn-youtube {
+  width: 3rem;
+  height: 3rem;
+  background: url(../img/sns-ico-youtube.svg) no-repeat 50% / contain;
+}
+
 /* 모바일 메뉴~!!!! */
 .mobile-menu {
   position: fixed;
@@ -546,6 +558,9 @@ nav::before {
 }
 
 /* footer */
+footer {
+  background: var(--white100);
+}
 
 .foot-list {
   display: flex;
@@ -611,7 +626,7 @@ nav::before {
 .family-list {
   background: var(--white100);
   border: 2px solid var(--black20);
-  width: 16.7rem;
+  width: 19rem;
   border-radius: 10px;
   padding: 2rem 3rem;
   margin-top: 4.2rem;
@@ -619,6 +634,7 @@ nav::before {
   user-select: none;
   pointer-events: none;
   display: none;
+  z-index: 1;
 }
 
 .family-list li:first-child a {
@@ -659,7 +675,6 @@ nav::before {
 }
 
 .foot-con address p + p {
-  font-weight: 700;
   margin-top: 1rem;
 }
 
@@ -745,16 +760,6 @@ nav::before {
   position: relative;
 }
 
-.visual figure::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--black10);
-}
-
 .visual {
   position: relative;
 }
@@ -769,37 +774,9 @@ nav::before {
   font-size: 1.8rem;
 }
 
-/* map */
-
-.map-info > li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.7rem 0;
-  border-bottom: 1px solid var(--black20);
-}
-
-.map-info dl dt {
-  font-weight: 700;
-  color: var(--title-color);
-}
-
-.map-info dl dd {
-  font-size: 1.6rem;
-  word-break: keep-all;
-}
-
 @media (max-width: 1800px) {
   .inner {
     width: 82.4219%;
-  }
-
-  .map-wrap {
-    flex-direction: column;
-  }
-
-  .map-search {
-    width: 100%;
   }
 
   .foot-list::before,

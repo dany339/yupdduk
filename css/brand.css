@@ -1,201 +1,96 @@
 @charset 'utf-8';
 
-.vision {
-  box-shadow: 0px 0px 30px var(--main-color15);
-  padding: 5.8rem 0 14.2rem 0;
+.card-benefit {
+  padding: 10.6rem 0 10.2rem 0;
+  background: #651d16;
 }
 
-.vison-title {
-  margin-top: 9rem;
-  text-align: center;
-  position: relative;
-}
-
-.vison-title::before,
-.vison-title::after {
-  content: "";
-  width: 24.6rem;
-  height: 15rem;
-  position: absolute;
-  background: url(../img/decoration-pic1.svg) no-repeat;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.vison-title::before {
-  left: 0;
-}
-
-.vison-title::after {
-  right: 0;
-  transform: translateY(-50%) scaleX(-1);
-}
-
-.vison-title p:nth-child(1) {
-  color: var(--main-color);
-}
-
-.vison-title h4 {
-  font: 8.2rem/1.1 "Poppins", sans-serif;
-  font-size: clamp(5.5rem, 9vw, 8.2rem);
-
-  font-weight: 600;
-  color: var(--main-color);
-}
-
-.vison-title p {
-  margin: 3rem auto 0 auto;
-  width: 50%;
-  word-break: keep-all;
-}
-
-.vip .sec-title {
-  margin-top: 6.25vw;
-}
-
-.vip-service {
-  margin: 6rem 0 12rem 0;
-  padding: 3rem;
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  flex-shrink: 0;
-  overflow-x: auto;
-}
-
-.vip-service li {
-  width: 36.9rem;
-  min-width: 33.5rem;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  padding: 0 5.4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-  background: no-repeat 50% / cover;
-  position: relative;
-  cursor: pointer;
-  word-break: keep-all;
-  box-shadow: 0px 0px 30px rgba(192, 199, 156, 0.55);
-}
-
-.vip-service li:nth-child(1) {
-  background-image: url(https://lanbelle.studio-jt.co.kr/wp-content/themes/lanbelle/images/sub/product/egfampule-intro-04.jpg);
-}
-.vip-service li:nth-child(2) {
-  background-image: url(https://lanbelle.studio-jt.co.kr/wp-content/themes/lanbelle/images/sub/product/cleansingoil-intro-03.jpg);
-}
-.vip-service li:nth-child(3) {
-  background-image: url(https://lanbelle.studio-jt.co.kr/wp-content/themes/lanbelle/images/sub/product/lanstamanucream-intro-03.jpg);
-}
-.vip-service li:nth-child(4) {
-  background-image: url(https://lanbelle.studio-jt.co.kr/wp-content/themes/lanbelle/images/sub/product/hydratingduoserum-intro-04.jpg);
-}
-
-.vip-service li::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--main-color10);
-  transition: 0.4s;
-}
-
-.vip-service li:hover::after {
-  content: "";
+.card-reward {
+  padding: 10.6rem 0 10.2rem 0;
   background: var(--main-color);
 }
 
-.vip-service dl {
-  position: relative;
-  z-index: 1;
+.memdership-card .sec-title,
+.memdership-card strong {
+  color: var(--white100);
 }
 
-.vip-service dt {
+.app-con {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2.8rem;
+  gap: 2rem;
+}
+
+.app-icon {
+  width: 41.7rem;
+  height: 29.6rem;
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+  background: var(--white10);
+  border-radius: 10px;
+  padding: 5rem 4rem;
+  position: relative;
+}
+
+.app-icon:hover {
+  box-shadow: 0 0 10px rgba(250, 255, 242, 0.6);
+  transition: box-shadow 0.3s ease;
+}
+
+.app-icon dl::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6.5rem;
+  aspect-ratio: 1/1;
+  background: no-repeat 50%;
+}
+
+.app-icon dl.app-icon-1::before {
+  background-image: url(../img/app-ico1.svg);
+}
+
+.app-icon dl.app-icon-2::before {
+  background-image: url(../img/app-ico2.svg);
+}
+
+.app-icon dl.app-icon-3::before {
+  background-image: url(../img/app-ico3.svg);
+}
+
+.app-icon dl.app-icon-4::before {
+  background-image: url(../img/app-ico4.svg);
+}
+
+.app-icon dl.app-icon-5::before {
+  background-image: url(../img/app-ico5.svg);
+}
+
+.app-icon dl.app-icon-6::before {
+  background-image: url(../img/app-ico6.svg);
+}
+
+.app-icon dl dt {
   font-size: 3rem;
   font-weight: 700;
-  color: var(--title-color);
-  transform: translateY(140%);
-  transition: 0.5s;
-}
-
-.vip-service li:hover dt {
-  transform: translateY(0);
-}
-
-.vip-service dd {
-  margin-top: 2.3rem;
-  transform: translateY(350%);
-  color: var(--text-color);
-  transition: 0.5s;
-}
-.vip-service li:hover dd {
-  transform: translateY(0);
-}
-
-.story .inner {
-  overflow: hidden;
-}
-
-.story {
-  background: url(../img/brand-story.jpg) no-repeat 50% / cover;
-  padding: 21.2rem 0 20rem 0;
-  position: relative;
-  /* transform: translateY(-50%); */
-  z-index: 1;
-}
-
-.story::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(192, 199, 156, 1),
-    rgba(192, 199, 156, 0.2)
-  );
-}
-
-.story .sec-title {
-  position: relative;
-  z-index: 1;
-}
-.story .sec-title strong {
   color: var(--white100);
+  margin-top: 1rem;
 }
 
-.story .sec-title h3 {
-  color: var(--white100);
-  width: 50%;
+.app-icon dl dd {
+  margin-top: 1.2rem;
+  color: var(--white40);
   word-break: keep-all;
-}
-
-.story p {
-  width: 50%;
-  font-size: clamp(1.8rem, 2.2vw, 2rem);
-  color: var(--white70);
-  word-break: keep-all;
-  margin-top: 2.8rem;
-  position: relative;
-  z-index: 1;
-}
-
-.story b {
-  font-size: clamp(2rem, 2.2vw, 2.2rem);
-  font-weight: 600;
-  color: var(--white100);
 }
 
 .online {
   padding: 6.25vw 0;
-  background: var(--main-color20);
 }
 
 .online-slider-wrap {
@@ -270,12 +165,56 @@
   opacity: 1;
 }
 
-onlinee-slider-wrap .swiper-pagination {
+.online-slider-wrap .swiper-pagination {
   position: relative; /* 변경: absolute에서 relative로 */
   bottom: -5rem; /* 필요에 따라 조정 */
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.8rem;
+}
+
+.price .sec-title {
+  margin-top: 10.4167vw;
+}
+
+.price .tab-con {
+  margin-top: 5vw;
+  overflow: auto;
+}
+
+.price-con-item {
+  /* margin-top: 7.7rem; */
+  margin-top: 3.0104vw;
+  text-align: center;
+}
+
+.price-con-item thead {
+  background: var(--main-color10);
+  border-top: 2px solid var(--main-color);
+  border-bottom: 2px solid var(--black20);
+  height: 7rem;
+}
+
+.price-con-item tbody tr {
+  border-bottom: 2px solid var(--black20);
+  height: 13.7rem;
+}
+
+.price-con-item th,
+.price-con-item td {
+  vertical-align: middle;
+}
+
+.price-con-item tr th,
+.price-con-item tr td:nth-child(1) {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--title-color);
+}
+
+.price-con-item tr td:nth-child(1),
+.price-con-item tr th:nth-child(1) {
+  border-right: 2px solid var(--black20);
 }
 
 @keyframes move {
@@ -288,29 +227,10 @@ onlinee-slider-wrap .swiper-pagination {
   }
 }
 
-@media (max-width: 1800px) {
-  .vison-title::before,
-  .vison-title::after {
-    width: 18rem;
-    height: 13rem;
-    background-size: contain;
-  }
-}
-
-@media (max-width: 1400px) {
-  .vison-title::before,
-  .vison-title::after {
-    display: none;
-  }
-}
-
 @media (max-width: 1350px) {
-  .vip-service {
-    justify-content: flex-start;
-  }
-
-  .story p {
-    width: 85%;
+  .app-con li {
+    width: 100%;
+    justify-content: center;
   }
 
   .online-txt {
@@ -324,28 +244,18 @@ onlinee-slider-wrap .swiper-pagination {
   .online .view-more {
     margin-top: 2rem;
   }
-}
 
-@media (max-width: 800px) {
-  .vison-title p {
-    width: 80%;
-  }
-
-  .slider {
-    height: 55vh;
-  }
-
-  .story .sec-title h3 {
-    width: 100%;
-  }
-
-  .store-txt {
-    width: 100%;
+  .price .sec-title {
+    margin-top: 15rem;
   }
 }
 
 @media (max-width: 600px) {
-  .story p {
-    width: 100%;
+  .price .tab-con {
+    margin-top: 4rem;
+  }
+
+  .price-con-item {
+    margin-top: 2rem;
   }
 }
