@@ -82,9 +82,9 @@ const visualTl = gsap.timeline({
 });
 visualTl.from(visualPic, { scale: 3, filter: "blur(30px)", duration: 2 });
 
-visualTl.from(".visual-title h2", { y: 100, autoAlpha: 0 }, "-=0.9");
+visualTl.from(".bread", { y: 50, autoAlpha: 0 }, "-=0.9");
+visualTl.from(".visual-title h2", { y: 100, autoAlpha: 0 }, "-=0.6");
 visualTl.from(".visual-title p", { y: 100, autoAlpha: 0 }, "-=0.6");
-visualTl.from(".bread", { y: 50, autoAlpha: 0 }, "-=0.6");
 
 /* MAIN!!!---------------------------------------------- */
 
@@ -200,6 +200,7 @@ if ($(".allergie-slider").length) {
     },
   });
 }
+
 if ($(".menu-list li")) {
   const $menuList = $(".menu-list");
   $menuList.on("click", function () {
@@ -219,6 +220,35 @@ $menuItem.on("click", function () {
   // 선택한 놈의 자손중 답변을 찾아서 슬라이드 토글
   $(menuList).find($menuItem).stop().slideToggle(duration);
 });
+
+/* BRAND!!!---------------------------------------------- */
+
+// online swiper(MENU)
+if ($(".online-slider").length) {
+  const onlineSlider = new Swiper(".online-slider", {
+    slidesPerView: 2,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+    },
+    pagination: {
+      el: ".online-slider-wrap .swiper-pagination",
+      type: "fraction",
+    },
+
+    breakpoints: {
+      1440: {
+        slidesPerView: 8,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+    },
+  });
+}
 
 /* REWARDS!!!---------------------------------------------- */
 
@@ -333,6 +363,8 @@ $question.on("click", function () {
   // 선택한 놈의 자손중 답변을 찾아서 슬라이드 토글
   $(this).find($answer).stop().slideToggle(duration);
 });
+
+/* MAP!!!---------------------------------------------- */
 
 /* MAP!!!---------------------------------------------- */
 

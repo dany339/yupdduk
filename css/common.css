@@ -328,8 +328,8 @@ nav::before {
 
 .logo a {
   display: block;
-  width: 21rem;
-  height: 3rem;
+  width: 14rem;
+  height: 6rem;
   background: url(../img/logo.svg) no-repeat 0 0 / contain;
 }
 
@@ -558,9 +558,6 @@ nav::before {
 }
 
 /* footer */
-footer {
-  background: var(--white100);
-}
 
 .foot-list {
   display: flex;
@@ -684,8 +681,8 @@ footer {
 }
 
 .accredit figure {
-  width: 21rem;
-  aspect-ratio: 1/0.1429;
+  width: 14rem;
+  height: 6rem;
 }
 
 .accredit figure img {
@@ -725,6 +722,10 @@ footer {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+}
+
+.visual strong > a {
+  color: var(--white100);
 }
 
 .visual-title {
@@ -843,7 +844,7 @@ footer {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
   .inner {
     width: 95%;
   }
@@ -912,6 +913,11 @@ footer {
     padding: 5rem 3rem 7rem 3rem;
   }
 
+  .foot-info {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
   .accredit {
     margin-top: 5rem;
   }
@@ -939,10 +945,5 @@ footer {
   .btn-main {
     left: 50%;
     transform: translateX(-50%);
-  }
-
-  .foot-info {
-    flex-direction: column;
-    gap: 1.5rem;
   }
 }
