@@ -92,8 +92,9 @@ visualTl.from(".visual-title p", { y: 100, autoAlpha: 0 }, "-=0.6");
 function handleMouseMove(e) {
   const cursor = document.querySelector(".cursor");
   const menuConSliderWrap = document.querySelector(".menu-con-slider-wrap");
+  const eventSwipers = document.querySelectorAll(".event-swiper");
 
-  if (cursor && menuConSliderWrap) {
+  if (cursor && menuConSliderWrap && eventSwipers) {
     const mouseX = e.clientX;
     const mouseY = e.clientY;
 
@@ -101,14 +102,25 @@ function handleMouseMove(e) {
     cursor.style.top = `${mouseY}px`;
 
     const menuRect = menuConSliderWrap.getBoundingClientRect();
+    let isCursorVisible = false;
 
-    // menu-con-slider-wrap 또는 allergie-slider-wrap 영역에 마우스가 있는지 확인
-    if (
-      mouseX >= menuRect.left &&
-      mouseX <= menuRect.right &&
-      mouseY >= menuRect.top &&
-      mouseY <= menuRect.bottom
-    ) {
+    eventSwipers.forEach((eventSwiper) => {
+      const eventRect = eventSwiper.getBoundingClientRect();
+      if (
+        (mouseX >= eventRect.left &&
+          mouseX <= eventRect.right &&
+          mouseY >= eventRect.top &&
+          mouseY <= eventRect.bottom) ||
+        (mouseX >= menuRect.left &&
+          mouseX <= menuRect.right &&
+          mouseY >= menuRect.top &&
+          mouseY <= menuRect.bottom)
+      ) {
+        isCursorVisible = true;
+      }
+    });
+
+    if (isCursorVisible) {
       cursor.style.opacity = "1";
     } else {
       cursor.style.opacity = "0";
@@ -128,6 +140,10 @@ if ($(".menu-con-slider").length) {
     autoplay: {
       delay: 5000,
     },
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar",
+    },
   });
 
   const $menuTxtSlider = new Swiper(".menu-txt-slider", {
@@ -138,6 +154,33 @@ if ($(".menu-con-slider").length) {
     },
     thumbs: {
       swiper: $menuConSlider,
+    },
+  });
+}
+
+// event swiper(MAIN)
+if ($(".event-swiper").length) {
+  const $eventSwiper = new Swiper(".event-swiper", {
+    loop: true,
+    slidesPerView: "2",
+    spaceBetween: 20,
+    autoplay: {
+      delay: 1000,
+    },
+
+    breakpoints: {
+      600: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      800: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+      1300: {
+        slidesPerView: 5.9,
+        spaceBetween: 20,
+      },
     },
   });
 }
@@ -173,7 +216,7 @@ function menuTabAction(index) {
 // allergie swiper(MENU)
 if ($(".allergie-slider").length) {
   const allergieSwiper = new Swiper(".allergie-slider", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 20,
     loop: true,
     autoplay: {
@@ -186,15 +229,15 @@ if ($(".allergie-slider").length) {
 
     breakpoints: {
       1300: {
-        slidesPerView: 8,
+        slidesPerView: 3.8,
         spaceBetween: 20,
       },
-      830: {
-        slidesPerView: 6,
+      768: {
+        slidesPerView: 3,
         spaceBetween: 20,
       },
-      700: {
-        slidesPerView: 4,
+      425: {
+        slidesPerView: 2,
         spaceBetween: 20,
       },
     },
@@ -219,51 +262,6 @@ $menuItem.on("click", function () {
   // $(this).find($answer).slideDown(duration);
   // 선택한 놈의 자손중 답변을 찾아서 슬라이드 토글
   $(menuList).find($menuItem).stop().slideToggle(duration);
-});
-
-/* BRAND!!!---------------------------------------------- */
-
-// online swiper(MENU)
-function initOnlineSlider() {
-  if ($(".online-slider").length && typeof Swiper !== "undefined") {
-    const onlineSlider = new Swiper(".online-slider", {
-      slidesPerView: 2,
-      spaceBetween: 20,
-      loop: true,
-      autoplay: {
-        delay: 2000,
-      },
-      pagination: {
-        el: ".online-slider-wrap .swiper-pagination",
-        type: "fraction",
-      },
-      breakpoints: {
-        1440: {
-          slidesPerView: 8,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 4,
-          spaceBetween: 20,
-        },
-      },
-    });
-  }
-}
-
-// DOM이 준비되면 실행
-$(document).ready(function () {
-  // Swiper가 로드되었는지 확인
-  if (typeof Swiper !== "undefined") {
-    initOnlineSlider();
-  } else {
-    console.warn(
-      "Swiper is not loaded. Online slider will not be initialized."
-    );
-  }
-
-  // app-con 관련 스타일 초기화
-  $(".app-con").css("display", "flex");
 });
 
 /* REWARDS!!!---------------------------------------------- */
