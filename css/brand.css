@@ -101,6 +101,10 @@
   word-break: keep-all;
 }
 
+.card-benefit .app-icon dl dd {
+  margin-top: 0.5rem;
+}
+
 .online {
   padding: 6.25vw 0;
 }

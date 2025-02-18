@@ -377,7 +377,6 @@ nav::before {
   left: 0;
   width: 100%;
 
-  /* jQuery로 동작을 만들기 위한 준비 */
   display: none;
   padding-top: 3.3rem;
 }
@@ -387,10 +386,8 @@ nav::before {
   font-weight: 500;
   word-break: keep-all;
   display: block;
-  /* border: 1px solid #000; */
   padding: 1.2rem;
   text-align: center;
-  /* background: #fff; */
   color: var(--text-color);
 }
 
@@ -405,24 +402,6 @@ nav::before {
   width: 2.2rem;
   height: 2.2rem;
   background: no-repeat 50% / cover;
-}
-
-.btn-language {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--white100);
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-
-.btn-language::after {
-  content: "";
-  display: block;
-  width: 1rem;
-  aspect-ratio: 1/1;
-  background: red;
-  background: url(../img/arrow-m-bottom.png) no-repeat 50% / contain;
 }
 
 .btn-menu {

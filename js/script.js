@@ -224,38 +224,54 @@ $menuItem.on("click", function () {
 /* BRAND!!!---------------------------------------------- */
 
 // online swiper(MENU)
-if ($(".online-slider").length) {
-  const onlineSlider = new Swiper(".online-slider", {
-    slidesPerView: 2,
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-      delay: 2000,
-    },
-    pagination: {
-      el: ".online-slider-wrap .swiper-pagination",
-      type: "fraction",
-    },
-
-    breakpoints: {
-      1440: {
-        slidesPerView: 8,
-        spaceBetween: 20,
+function initOnlineSlider() {
+  if ($(".online-slider").length && typeof Swiper !== "undefined") {
+    const onlineSlider = new Swiper(".online-slider", {
+      slidesPerView: 2,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 2000,
       },
-      768: {
-        slidesPerView: 4,
-        spaceBetween: 20,
+      pagination: {
+        el: ".online-slider-wrap .swiper-pagination",
+        type: "fraction",
       },
-    },
-  });
+      breakpoints: {
+        1440: {
+          slidesPerView: 8,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+      },
+    });
+  }
 }
+
+// DOM이 준비되면 실행
+$(document).ready(function () {
+  // Swiper가 로드되었는지 확인
+  if (typeof Swiper !== "undefined") {
+    initOnlineSlider();
+  } else {
+    console.warn(
+      "Swiper is not loaded. Online slider will not be initialized."
+    );
+  }
+
+  // app-con 관련 스타일 초기화
+  $(".app-con").css("display", "flex");
+});
 
 /* REWARDS!!!---------------------------------------------- */
 
 const $snsTabMenu = $(".sns-tab > li");
 const $snsTabCon = $(".sns .sns-list");
 
-snsTabAction(1);
+snsTabAction(0);
 
 $snsTabMenu.on("click", function (e) {
   e.preventDefault();
@@ -328,18 +344,6 @@ function rewardTabAction(index) {
   $rewardTabCon.eq(index).show();
 }
 
-// rewards.html의 캐릭터 고정
-
-const $footerSection = $("footer");
-
-$footerSection.on("mouseenter", function () {
-  $(".app-store figure").addClass("on");
-});
-
-$footerSection.on("mouseleave", function () {
-  $(".app-store figure").removeClass("on");
-});
-
 // GIFT CARD 유의사항 안내(토글)
 
 const $question = $(".info-wrap > ul > li");
@@ -366,20 +370,33 @@ $question.on("click", function () {
 
 /* MAP!!!---------------------------------------------- */
 
-/* MAP!!!---------------------------------------------- */
-
 const $mapSearch = $(".map-search");
 const $btnFold = $(".btn-fold");
 
+// 페이지 로드 시 초기 상태 설정
+$(document).ready(function () {
+  if (window.innerWidth <= 1024) {
+    $mapSearch.addClass("on");
+  }
+});
+
+// 리사이즈 이벤트 처리
+$(window).on("resize", function () {
+  if (window.innerWidth <= 1024) {
+    $mapSearch.addClass("on");
+  } else {
+    $mapSearch.removeClass("on");
+  }
+});
+
 $btnFold.on("click", function () {
-  $mapSearch.toggleClass("on"); // Toggle the 'on' class for .map-search
+  $mapSearch.toggleClass("on");
 });
 
 // TOP 버튼
 AOS.init();
 
 const btnTop = document.querySelector(".btn-top");
-const btnTalk = document.querySelector(".btn-talk");
 const html = document.documentElement;
 const htmlPos = html.scrollHeight / 2;
 
@@ -388,9 +405,7 @@ window.addEventListener("scroll", function () {
 
   if (scrollTop >= htmlPos) {
     btnTop.classList.add("active");
-    btnTalk.classList.add("active");
   } else {
     btnTop.classList.remove("active");
-    btnTalk.classList.remove("active");
   }
 });

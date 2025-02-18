@@ -184,7 +184,7 @@
 .info-wrap li::after {
   content: "";
   position: absolute;
-  top: 4.6rem;
+  top: 3.6rem;
   right: 3%;
   width: 4rem;
   aspect-ratio: 1/1;
@@ -248,7 +248,7 @@
   color: var(--main-color);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1440px) {
   .sns-tab li {
     width: 10rem;
   }
@@ -259,11 +259,18 @@
 
   .reward-item li {
     width: 100%;
+    justify-content: flex-start;
   }
 }
 
 @media (max-width: 710px) {
   .reward .sec-title {
     margin-top: 20.4167vw;
+  }
+}
+
+@media (max-width: 550px) {
+  .sns-tab {
+    justify-content: flex-start;
   }
 }

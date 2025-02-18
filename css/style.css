@@ -5,10 +5,7 @@
 }
 
 .slider-menu-wrap {
-  /* background: #ff5; */
-  /* padding: 23.8rem 0; */
-  padding-top: 12.3958vw;
-  padding-top: 25rem;
+  padding-top: 12rem;
   display: flex;
   gap: 2rem;
   /* border: 1px solid #000; */
@@ -102,11 +99,11 @@
 }
 
 .tip {
-  margin: 6.25vw 0;
+  margin: 12rem 0;
 }
 
 .tip-list {
-  margin-top: 6rem;
+  margin-top: 3.125vw;
   display: flex;
   justify-content: space-between;
   gap: 2rem;
@@ -292,17 +289,17 @@
   }
 }
 
-@media (max-width: 1800px) {
-  .menu-text-card h3 {
-    font-size: 8rem;
+@media (max-width: 1440px) {
+  .tip-list li:hover strong {
+    top: 12%;
   }
 
-  .menu-text-card p {
-    width: 90%;
+  .tip-list li:hover p {
+    top: 12%;
   }
 }
 
-@media (max-width: 1320px) {
+@media (max-width: 1024px) {
   .main-title {
     width: 50vw;
     min-width: 35rem;
@@ -336,15 +333,9 @@
   .menu-con-slider {
     width: 100%;
   }
-}
 
-@media (max-width: 1400px) {
   .tip-list {
     flex-direction: column;
-  }
-
-  .tip-list br {
-    display: none;
   }
 
   .tip-list li {
@@ -354,12 +345,6 @@
 
   .tip-list li p {
     margin-top: 1rem;
-  }
-}
-
-@media (max-width: 1200px) {
-  .allergie-txt {
-    margin-top: 10rem;
   }
 
   .allergie-txt p {
