@@ -7,18 +7,16 @@
 .menu-card {
   position: relative;
   width: 42.7rem;
-  /* width: 22.2396vw; */
   aspect-ratio: 1/1.2272;
   border-radius: 10px;
   overflow: hidden;
-  /* margin: 0 1rem; */
   margin-right: 2rem;
   word-break: keep-all;
 }
 
 .event {
-  /* margin-top: 6.35vw; */
-  margin-top: 8.0208vw;
+  /* margin-top: 8.0208vw; */
+  margin-top: 15.4rem;
 }
 
 .event-list {
@@ -28,14 +26,11 @@
 
 .event-swiper figure {
   margin-top: 2.6rem;
-  /* width: 37.8rem; */
-  /* width: 19.6875vw; */
   width: 100%;
   aspect-ratio: 1/1.09259;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  cursor: none;
   box-shadow: 5px 6px 11px rgba(0, 0, 0, 0.25);
 }
 
@@ -153,16 +148,6 @@
   }
   50% {
     transform: translateY(-4%);
-  }
-}
-
-@media (max-width: 1440px) {
-  .tip-list li:hover strong {
-    top: 12%;
-  }
-
-  .tip-list li:hover p {
-    top: 12%;
   }
 }
 

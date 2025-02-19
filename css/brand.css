@@ -54,15 +54,15 @@
 
 .thanks {
   background-color: #fff6e9;
-  height: 38rem;
+  padding: 8.3333vw 2rem;
 }
 
 .thanks h4 {
   color: var(--title-color);
   font: 5.2rem/1.5 "Pretendard", sans-serif;
-  font-size: clamp(4rem, 6vw, 5.2rem);
-  padding: 16rem 0;
+  font-size: clamp(3rem, 3vw, 5.2rem);
   text-align: center;
+  word-break: keep-all;
 }
 
 .thanks strong {

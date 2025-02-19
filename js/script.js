@@ -88,48 +88,6 @@ visualTl.from(".visual-title p", { y: 100, autoAlpha: 0 }, "-=0.6");
 
 /* MAIN!!!---------------------------------------------- */
 
-// cursor 기능(MAIN)
-function handleMouseMove(e) {
-  const cursor = document.querySelector(".cursor");
-  const menuConSliderWrap = document.querySelector(".menu-con-slider-wrap");
-  const eventSwipers = document.querySelectorAll(".event-swiper");
-
-  if (cursor && menuConSliderWrap && eventSwipers) {
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-
-    cursor.style.left = `${mouseX}px`;
-    cursor.style.top = `${mouseY}px`;
-
-    const menuRect = menuConSliderWrap.getBoundingClientRect();
-    let isCursorVisible = false;
-
-    eventSwipers.forEach((eventSwiper) => {
-      const eventRect = eventSwiper.getBoundingClientRect();
-      if (
-        (mouseX >= eventRect.left &&
-          mouseX <= eventRect.right &&
-          mouseY >= eventRect.top &&
-          mouseY <= eventRect.bottom) ||
-        (mouseX >= menuRect.left &&
-          mouseX <= menuRect.right &&
-          mouseY >= menuRect.top &&
-          mouseY <= menuRect.bottom)
-      ) {
-        isCursorVisible = true;
-      }
-    });
-
-    if (isCursorVisible) {
-      cursor.style.opacity = "1";
-    } else {
-      cursor.style.opacity = "0";
-    }
-  }
-}
-
-window.addEventListener("mousemove", handleMouseMove);
-
 // menu swiper(MAIN)
 if ($(".menu-con-slider").length) {
   const $menuConSlider = new Swiper(".menu-con-slider", {

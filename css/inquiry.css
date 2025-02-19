@@ -13,15 +13,14 @@
 }
 
 .faq {
-  margin: 6.25vw 0;
+  margin: 12rem 0 6.25vw 0;
 }
 
 .faq-wrap {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  gap: 2.3438vw;
-  margin-top: 4rem;
+  gap: 2rem;
 }
 
 .faq-tab {
@@ -31,7 +30,7 @@
   font-size: clamp(2.4rem, 3vw, 3rem);
   font-weight: 700;
   gap: 2rem;
-  margin-top: 6rem;
+  margin-top: 3.125vw;
   flex-shrink: 0;
   overflow-x: auto;
 }
@@ -140,4 +139,14 @@
 .answer-con {
   display: flex;
   gap: 3rem;
+}
+
+@media (max-width: 1024px) {
+  .menu-con-slider {
+    height: 51.1719vw;
+  }
+
+  .menu-card {
+    width: 100%;
+  }
 }

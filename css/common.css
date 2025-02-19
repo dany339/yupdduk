@@ -75,6 +75,12 @@ body {
   overflow-x: hidden;
 }
 
+.menu-con-slider,
+.event-list,
+.event-swiper figure {
+  cursor: url("../img/cursor.svg") 2 2, auto;
+}
+
 .btn-more {
   display: flex;
   justify-content: center;
@@ -175,6 +181,7 @@ body {
 
   opacity: 0;
   transition: 0.4s ease;
+  z-index: 1;
 }
 
 .btn-top {
@@ -189,6 +196,7 @@ body {
 
   opacity: 0;
   transition: 0.4s ease;
+  z-index: 1;
 }
 
 .btn-talk.active {
@@ -198,26 +206,6 @@ body {
 .btn-top.active {
   opacity: 1;
   bottom: 22.7rem;
-}
-
-.menu-con-slider {
-  cursor: none;
-}
-
-.cursor {
-  position: fixed;
-  pointer-events: none;
-  transition: opacity 0.2s;
-  top: -10rem;
-  left: -10rem;
-  width: 10rem;
-  aspect-ratio: 1/1;
-  background: url(../img/cursor.svg) no-repeat 0 0;
-
-  pointer-events: none;
-  user-select: none;
-
-  z-index: 2;
 }
 
 .tab-con {
@@ -295,7 +283,7 @@ header.active::after {
 }
 
 nav {
-  max-width: 192rem;
+  max-width: 100vw;
   height: 10rem;
   display: flex;
   justify-content: space-between;
@@ -797,8 +785,6 @@ nav::before {
 }
 
 .menu-con-slider {
-  /* border: 1px solid #f00; */
-  /* width: 1000px; */
   width: 50vw;
   height: 52.4rem;
 }
@@ -966,7 +952,7 @@ nav::before {
   }
 
   .menu-text-card .btn-more {
-    margin: 6rem auto 0 auto;
+    margin: 2rem auto 0 auto;
   }
 
   .menu-card {
