@@ -15,10 +15,6 @@
   --text-color: #666666;
   --white100: rgba(255, 255, 255, 1);
   --white70: rgba(255, 255, 255, 0.7);
-  --white50: rgba(255, 255, 255, 0.5);
-  --white40: rgba(255, 255, 255, 0.4);
-  --white20: rgba(255, 255, 255, 0.2);
-  --white10: rgba(255, 255, 255, 0.1);
   --black50: rgba(0, 0, 0, 0.5);
   --black40: rgba(0, 0, 0, 0.4);
   --black20: rgba(0, 0, 0, 0.2);
@@ -325,7 +321,7 @@ nav::before {
 
 .logo a {
   display: block;
-  width: 14rem;
+  width: 10rem;
   height: 6rem;
   background: url(../img/logo.svg) no-repeat 0 0 / contain;
 }
@@ -468,12 +464,6 @@ nav::before {
   width: 3rem;
   height: 3rem;
   background: url(../img/sns-ico-instargram.svg) no-repeat 50% / contain;
-}
-
-.btn-facebook {
-  width: 3rem;
-  height: 3rem;
-  background: url(../img/sns-ico-facebook.svg) no-repeat 50% / contain;
 }
 
 .btn-youtube {
@@ -657,8 +647,8 @@ nav::before {
 }
 
 .accredit figure {
-  width: 14rem;
-  height: 6rem;
+  width: 12rem;
+  height: 7.2rem;
 }
 
 .accredit figure img {
@@ -737,6 +727,16 @@ nav::before {
   position: relative;
 }
 
+.visual figure::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--black10);
+}
+
 .visual {
   position: relative;
 }
@@ -749,6 +749,99 @@ nav::before {
   z-index: 1;
   color: var(--white100);
   font-size: 1.8rem;
+}
+
+/* 메뉴 슬라이더 디자인 공유 */
+
+.slider-menu-wrap {
+  padding-top: 12rem;
+  display: flex;
+  gap: 2rem;
+  /* border: 1px solid #000; */
+}
+
+.menu-txt-slider {
+  flex: 1 0 48%;
+}
+
+.menu-con-slider-wrap {
+  flex: 1 0 48%;
+}
+
+.menu-text-card {
+  background: #fff;
+  padding-right: 2rem;
+}
+
+.menu-text-card strong {
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--main-color);
+  margin-top: 2rem;
+}
+
+.menu-text-card h3 {
+  font: 9rem/1.1 "Poppins", sans-serif;
+  font-size: clamp(5rem, 5vw, 9rem);
+  font-weight: 700;
+  color: var(--title-color);
+  word-break: keep-all;
+  margin-top: 2.8rem;
+}
+
+.menu-text-card p {
+  width: 30vw;
+  margin-top: 1.5rem;
+  word-break: keep-all;
+}
+
+.menu-text-card .btn-more {
+  margin-top: 6rem;
+}
+
+.menu-con-slider {
+  /* border: 1px solid #f00; */
+  /* width: 1000px; */
+  width: 50vw;
+  height: 52.4rem;
+}
+
+.menu-con-slider-wrap .swiper-pagination {
+  top: 105% !important;
+  color: var(--main-color);
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: var(--main-color);
+}
+
+.menu-card figure {
+  width: 100%;
+  height: 100%;
+}
+
+.menu-card .menu-name {
+  opacity: 0;
+  transition: 0.4s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10.2rem;
+  background: var(--main-color80);
+  color: var(--white100);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding: 2rem 3rem;
+}
+
+.menu-card:hover .menu-name {
+  opacity: 1;
+}
+
+.menu-card:hover::before {
+  opacity: 0;
 }
 
 @media (max-width: 1800px) {
@@ -860,6 +953,35 @@ nav::before {
 
   .mobile-sns-ico-list {
     margin-top: 3rem;
+  }
+
+  .slider-menu-wrap {
+    flex-wrap: wrap;
+  }
+
+  .menu-text-card {
+    text-align: center;
+  }
+
+  .menu-text-card p {
+    width: 80%;
+    margin: 0.7rem auto 0 auto;
+  }
+
+  .menu-text-card .btn-more {
+    margin: 6rem auto 0 auto;
+  }
+
+  .menu-card {
+    width: 100%;
+  }
+
+  .menu-con-slider-wrap {
+    width: 100%;
+  }
+
+  .menu-con-slider {
+    width: 100%;
   }
 
   .foot-list {

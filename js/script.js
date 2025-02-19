@@ -342,7 +342,32 @@ function rewardTabAction(index) {
   $rewardTabCon.eq(index).show();
 }
 
-// GIFT CARD 유의사항 안내(토글)
+/* INQUIRY!!!---------------------------------------------- */
+
+const $faqTabMenu = $(".faq-tab > li");
+const $faqTabCon = $(".info-wrap > ul");
+
+faqTabAction(0);
+
+$faqTabMenu.on("click", function (e) {
+  e.preventDefault();
+
+  const faqTabIdx = $(this).index();
+  console.log(faqTabIdx);
+
+  faqTabAction(faqTabIdx);
+});
+
+// 공통의 동작을 함수로 정의
+function faqTabAction(index) {
+  // 탭메뉴 활성화
+  $faqTabMenu.removeClass("on");
+  $faqTabMenu.eq(index).addClass("on");
+
+  // 인덱스에 해당하는 $tabCon 보이기
+  $faqTabCon.hide();
+  $faqTabCon.eq(index).show();
+}
 
 const $question = $(".info-wrap > ul > li");
 const $answer = $(".answer-wrap");
@@ -395,6 +420,7 @@ $btnFold.on("click", function () {
 AOS.init();
 
 const btnTop = document.querySelector(".btn-top");
+const btnTalk = document.querySelector(".btn-talk");
 const html = document.documentElement;
 const htmlPos = html.scrollHeight / 2;
 
@@ -403,7 +429,9 @@ window.addEventListener("scroll", function () {
 
   if (scrollTop >= htmlPos) {
     btnTop.classList.add("active");
+    btnTalk.classList.add("active");
   } else {
     btnTop.classList.remove("active");
+    btnTalk.classList.remove("active");
   }
 });

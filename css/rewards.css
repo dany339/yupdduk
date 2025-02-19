@@ -97,7 +97,7 @@
 }
 
 .tip {
-  margin: 12rem 0;
+  margin-top: 12rem;
 }
 
 .tip-list {
@@ -255,7 +255,7 @@
   position: relative;
   /* background: #ff5; */
   /* padding: 26rem 0 38rem 0; */
-  padding: 13.5417vw 0 19.7917vw 0;
+  padding: 6.25vw 0;
 }
 
 .add-download-con {
@@ -280,29 +280,12 @@
 }
 
 .app-store a {
-  display: block;
-  width: 25.8rem;
-  height: 6rem;
   background: var(--main-color);
   color: var(--white100);
-  border-radius: 5px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .app-store a:hover {
   color: var(--main-color);
-}
-
-.app-store a::after {
-  content: "";
-  display: block;
-  width: 2.6rem;
-  aspect-ratio: 1/1;
-  background: no-repeat 50%;
-  margin-left: 1rem;
 }
 
 .app-store a:nth-child(1)::after {
