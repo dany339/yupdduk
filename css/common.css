@@ -382,6 +382,24 @@ nav::before {
   background: no-repeat 50% / cover;
 }
 
+.btn-language {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--white100);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.btn-language::after {
+  content: "";
+  display: block;
+  width: 1rem;
+  aspect-ratio: 1/1;
+  background: red;
+  background: url(../img/arrow-m-bottom.png) no-repeat 50% / contain;
+}
+
 .btn-menu {
   width: 5rem;
   aspect-ratio: 1/1;
@@ -668,6 +686,14 @@ nav::before {
   word-break: keep-all;
 }
 
+.sec-title p {
+  font-weight: 400;
+  margin-top: 2.2727vw;
+  width: 40%;
+  word-break: keep-all;
+  color: var(--text-color);
+}
+
 /* 서브 비쥬얼 타이틀 공용! */
 .visual {
   width: 100vw;
@@ -938,6 +964,10 @@ nav::before {
     margin-top: 3rem;
   }
 
+  .sec-title p {
+    width: 80%;
+  }
+
   .slider-menu-wrap {
     flex-wrap: wrap;
   }
@@ -1026,5 +1056,9 @@ nav::before {
   .btn-main {
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  .sec-title p {
+    width: 100%;
   }
 }

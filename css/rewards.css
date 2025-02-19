@@ -203,12 +203,6 @@
   width: 100%;
 }
 
-.allergie-txt p {
-  margin-top: 2.2727vw;
-  width: 40%;
-  word-break: keep-all;
-}
-
 .allergie-slider {
   margin-top: 4rem;
 }
@@ -338,10 +332,6 @@
 }
 
 @media (max-width: 1024px) {
-  .allergie-txt p {
-    width: 80%;
-  }
-
   .allergie .view-more {
     margin-top: 2rem;
   }
@@ -354,10 +344,6 @@
 @media (max-width: 550px) {
   .sns-tab {
     justify-content: flex-start;
-  }
-
-  .allergie-txt p {
-    width: 100%;
   }
 
   .tip-list li {

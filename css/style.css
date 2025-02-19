@@ -6,10 +6,12 @@
 
 .menu-card {
   position: relative;
-  width: 42.7rem;
-  aspect-ratio: 1/1.2272;
+  width: 90.5rem;
+  /* width: 22.2396vw; */
+  aspect-ratio: 1/0.579;
   border-radius: 10px;
   overflow: hidden;
+  /* margin: 0 1rem; */
   margin-right: 2rem;
   word-break: keep-all;
 }
@@ -80,13 +82,13 @@
 }
 
 .tip-list li:nth-child(1) {
-  background-image: url(https://www.bonif.co.kr/assets/web/front/assets/images/main/third-cont1.jpg);
+  background-image: url(https://ecimg.cafe24img.com/pg1066b74068173066/hanul05/web/upload/2024_brand/brand_global01.jpg);
 }
 .tip-list li:nth-child(2) {
-  background-image: url(https://www.bonif.co.kr/assets/web/front/assets/images/main/third-cont2.jpg);
+  background-image: url(https://ecimg.cafe24img.com/pg1066b74068173066/hanul05/web/upload/2024_brand/brand_global02.jpg);
 }
 .tip-list li:nth-child(3) {
-  background-image: url(https://www.bonif.co.kr/assets/web/front/assets/images/main/third-cont3.jpg);
+  background-image: url(https://ecimg.cafe24img.com/pg1066b74068173066/hanul05/web/upload/2024_brand/brand_global03.jpg);
 }
 
 .tip-list li::after {
@@ -155,6 +157,14 @@
   .main-title {
     width: 50vw;
     min-width: 35rem;
+  }
+
+  .menu-con-slider {
+    height: 51.1719vw;
+  }
+
+  .menu-card {
+    width: 100%;
   }
 
   .event .view-more {
