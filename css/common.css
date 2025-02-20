@@ -4,13 +4,13 @@
 
 :root {
   font-size: 62.5%;
-  --main-color: #8c150d;
-  --main-color80: rgba(140, 21, 13, 0.8);
-  --main-color70: rgba(140, 21, 13, 0.7);
-  --main-color60: rgba(140, 21, 13, 0.6);
-  --main-color40: rgba(140, 21, 13, 0.4);
-  --main-color20: rgba(140, 21, 13, 0.2);
-  --main-color10: rgba(140, 21, 13, 0.1);
+  --main-color: #ed1c24;
+  --main-color80: rgba(237, 28, 36, 0.8);
+  --main-color70: rgba(237, 28, 36, 0.7);
+  --main-color60: rgba(237, 28, 36, 0.6);
+  --main-color40: rgba(237, 28, 36, 0.4);
+  --main-color20: rgba(237, 28, 36, 0.2);
+  --main-color10: rgba(237, 28, 36, 0.1);
   --title-color: #272727;
   --text-color: #666666;
   --white100: rgba(255, 255, 255, 1);
@@ -77,7 +77,9 @@ body {
 
 .menu-con-slider,
 .event-list,
-.event-swiper figure {
+.event-swiper figure:hover,
+.news-list,
+.news-swiper figure:hover {
   cursor: url("../img/cursor.svg") 2 2, auto;
 }
 
@@ -203,6 +205,7 @@ body {
   opacity: 1;
   bottom: 30.5rem;
 }
+
 .btn-top.active {
   opacity: 1;
   bottom: 22.7rem;
@@ -382,24 +385,6 @@ nav::before {
   background: no-repeat 50% / cover;
 }
 
-.btn-language {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--white100);
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-
-.btn-language::after {
-  content: "";
-  display: block;
-  width: 1rem;
-  aspect-ratio: 1/1;
-  background: red;
-  background: url(../img/arrow-m-bottom.png) no-repeat 50% / contain;
-}
-
 .btn-menu {
   width: 5rem;
   aspect-ratio: 1/1;
@@ -461,18 +446,6 @@ nav::before {
 .sns-ico-list {
   display: flex;
   gap: 1.2rem;
-}
-
-.btn-instagram {
-  width: 3rem;
-  height: 3rem;
-  background: url(../img/sns-ico-instargram.svg) no-repeat 50% / contain;
-}
-
-.btn-youtube {
-  width: 3rem;
-  height: 3rem;
-  background: url(../img/sns-ico-youtube.svg) no-repeat 50% / contain;
 }
 
 /* 모바일 메뉴~!!!! */
@@ -762,97 +735,6 @@ nav::before {
   font-size: 1.8rem;
 }
 
-/* 메뉴 슬라이더 디자인 공유 */
-
-.slider-menu-wrap {
-  padding-top: 12rem;
-  display: flex;
-  gap: 2rem;
-  /* border: 1px solid #000; */
-}
-
-.menu-txt-slider {
-  flex: 1 0 48%;
-}
-
-.menu-con-slider-wrap {
-  flex: 1 0 48%;
-}
-
-.menu-text-card {
-  background: #fff;
-  padding-right: 2rem;
-}
-
-.menu-text-card strong {
-  font-weight: 700;
-  font-size: 2rem;
-  color: var(--main-color);
-  margin-top: 2rem;
-}
-
-.menu-text-card h3 {
-  font: 9rem/1.1 "Poppins", sans-serif;
-  font-size: clamp(5rem, 5vw, 9rem);
-  font-weight: 700;
-  color: var(--title-color);
-  word-break: keep-all;
-  margin-top: 2.8rem;
-}
-
-.menu-text-card p {
-  width: 30vw;
-  margin-top: 1.5rem;
-  word-break: keep-all;
-}
-
-.menu-text-card .btn-more {
-  margin-top: 6rem;
-}
-
-.menu-con-slider {
-  width: 50vw;
-  height: 52.4rem;
-}
-
-.menu-con-slider-wrap .swiper-pagination {
-  top: 105% !important;
-  color: var(--main-color);
-}
-
-.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-  background: var(--main-color);
-}
-
-.menu-card figure {
-  width: 100%;
-  height: 100%;
-}
-
-.menu-card .menu-name {
-  opacity: 0;
-  transition: 0.4s;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 10.2rem;
-  background: var(--main-color80);
-  color: var(--white100);
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  padding: 2rem 3rem;
-}
-
-.menu-card:hover .menu-name {
-  opacity: 1;
-}
-
-.menu-card:hover::before {
-  opacity: 0;
-}
-
 @media (max-width: 1800px) {
   .inner {
     width: 82.4219%;
@@ -884,9 +766,7 @@ nav::before {
   .btn-main {
     left: 18%;
   }
-}
 
-@media (max-width: 1360px) {
   .foot-list {
     flex-direction: column;
     align-items: center;
@@ -966,35 +846,6 @@ nav::before {
 
   .sec-title p {
     width: 80%;
-  }
-
-  .slider-menu-wrap {
-    flex-wrap: wrap;
-  }
-
-  .menu-text-card {
-    text-align: center;
-  }
-
-  .menu-text-card p {
-    width: 80%;
-    margin: 0.7rem auto 0 auto;
-  }
-
-  .menu-text-card .btn-more {
-    margin: 2rem auto 0 auto;
-  }
-
-  .menu-card {
-    width: 100%;
-  }
-
-  .menu-con-slider-wrap {
-    width: 100%;
-  }
-
-  .menu-con-slider {
-    width: 100%;
   }
 
   .foot-list {

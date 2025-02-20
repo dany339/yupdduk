@@ -116,9 +116,8 @@ if ($(".menu-con-slider").length) {
   });
 }
 
-// event swiper(MAIN)
-if ($(".event-swiper").length) {
-  const $eventSwiper = new Swiper(".event-swiper", {
+if ($(".news-swiper").length) {
+  const $eventSwiper = new Swiper(".news-swiper", {
     loop: true,
     slidesPerView: "2",
     spaceBetween: 20,
@@ -127,16 +126,16 @@ if ($(".event-swiper").length) {
     },
 
     breakpoints: {
-      600: {
-        slidesPerView: 3,
+      1300: {
+        slidesPerView: 6,
         spaceBetween: 20,
       },
       800: {
         slidesPerView: 4,
         spaceBetween: 20,
       },
-      1300: {
-        slidesPerView: 5.9,
+      600: {
+        slidesPerView: 3,
         spaceBetween: 20,
       },
     },
@@ -174,7 +173,7 @@ function menuTabAction(index) {
 // allergie swiper(MENU)
 if ($(".allergie-slider").length) {
   const allergieSwiper = new Swiper(".allergie-slider", {
-    slidesPerView: 1,
+    slidesPerView: 2,
     spaceBetween: 20,
     loop: true,
     autoplay: {
@@ -186,16 +185,16 @@ if ($(".allergie-slider").length) {
     },
 
     breakpoints: {
-      1300: {
-        slidesPerView: 3.8,
+      1024: {
+        slidesPerView: 8,
         spaceBetween: 20,
       },
       768: {
-        slidesPerView: 3,
+        slidesPerView: 6,
         spaceBetween: 20,
       },
       425: {
-        slidesPerView: 2,
+        slidesPerView: 4,
         spaceBetween: 20,
       },
     },
@@ -249,55 +248,59 @@ function snsTabAction(index) {
   $snsTabCon.eq(index).show();
 }
 
-const $appTabMenu = $(".app-tab > li");
-const $appTabCon = $(".app-con");
+// event swiper(MAIN)
+const $eventTabMenu = $(".event-tab > li");
+const $eventTabCon = $(".event-list");
 
-let currentAppIndex = 1; // 현재 인덱스를 추적하는 변수
-appTabAction(currentAppIndex);
+$eventTabCon.hide();
+$eventTabCon.eq(0).show();
+$eventTabMenu.eq(0).find("a").addClass("on");
 
-$appTabMenu.on("click", function (e) {
+$eventTabMenu.on("click", function (e) {
   e.preventDefault();
 
-  const appTabIdx = $(this).index();
-  console.log(appTabIdx);
+  const eventTabIdx = $(this).index();
 
-  appTabAction(appTabIdx);
+  $eventTabMenu.find("a").removeClass("on");
+  $(this).find("a").addClass("on");
+
+  $eventTabCon.hide();
+  $eventTabCon.eq(eventTabIdx).show();
+
+  if (eventTabIdx === 0 && window.eventSwiper) {
+    window.eventSwiper.update();
+  }
 });
 
-// btn-next 클릭 시 인덱스 증가 및 appTabAction 호출
-$(".btn-next").on("click", function () {
-  currentAppIndex = (currentAppIndex + 1) % $appTabMenu.length; // 인덱스를 증가시키고, 마지막 인덱스에서 다시 0으로 돌아감
-  appTabAction(currentAppIndex);
-});
+if ($(".event-swiper").length) {
+  const $eventSwiper = new Swiper(".event-swiper", {
+    loop: true,
+    slidesPerView: "2",
+    spaceBetween: 20,
+    autoplay: {
+      delay: 1000,
+    },
 
-function appTabAction(index) {
-  $appTabMenu.removeClass("on");
-  $appTabMenu.eq(index).addClass("on");
+    breakpoints: {
+      1440: {
+        slidesPerView: 7.5,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 5,
+        spaceBetween: 20,
+      },
+      425: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
 
-  $appTabCon.hide();
-  $appTabCon.eq(index).show();
-}
-
-const $rewardTabMenu = $(".reward-tab > li");
-const $rewardTabCon = $(".reward-list");
-
-rewardTabAction(0);
-
-$rewardTabMenu.on("click", function (e) {
-  e.preventDefault();
-
-  const rewardTabIdx = $(this).index();
-  console.log(rewardTabIdx);
-
-  rewardTabAction(rewardTabIdx);
-});
-
-function rewardTabAction(index) {
-  $rewardTabMenu.find("a").removeClass("on");
-  $rewardTabMenu.eq(index).find("a").addClass("on");
-
-  $rewardTabCon.hide();
-  $rewardTabCon.eq(index).show();
+    pagination: {
+      el: ".event-list .swiper-pagination",
+      type: "fraction",
+    },
+  });
 }
 
 /* INQUIRY!!!---------------------------------------------- */
