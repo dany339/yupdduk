@@ -144,32 +144,6 @@ if ($(".news-swiper").length) {
 
 /* MENU!!!---------------------------------------------- */
 
-// menu-tab(MENU)
-const $menuTabMenu = $(".menu-tab > li");
-const $menuTabCon = $(".menu-con");
-
-menuTabAction(0);
-
-$menuTabMenu.on("click", function (e) {
-  e.preventDefault();
-
-  const menuTabIdx = $(this).index();
-  console.log(menuTabIdx);
-
-  menuTabAction(menuTabIdx);
-});
-
-// 공통의 동작을 함수로 정의
-function menuTabAction(index) {
-  // 탭메뉴 활성화
-  $menuTabMenu.removeClass("on");
-  $menuTabMenu.eq(index).addClass("on");
-
-  // 인덱스에 해당하는 $tabCon 보이기
-  $menuTabCon.hide();
-  $menuTabCon.eq(index).show();
-}
-
 // allergie swiper(MENU)
 if ($(".allergie-slider").length) {
   const allergieSwiper = new Swiper(".allergie-slider", {
@@ -222,31 +196,6 @@ $menuItem.on("click", function () {
 });
 
 /* REWARDS!!!---------------------------------------------- */
-
-const $snsTabMenu = $(".sns-tab > li");
-const $snsTabCon = $(".sns .sns-list");
-
-snsTabAction(0);
-
-$snsTabMenu.on("click", function (e) {
-  e.preventDefault();
-
-  const snsTabIdx = $(this).index();
-  console.log(snsTabIdx);
-
-  snsTabAction(snsTabIdx);
-});
-
-// 공통의 동작을 함수로 정의
-function snsTabAction(index) {
-  // 탭메뉴 활성화
-  $snsTabMenu.removeClass("on");
-  $snsTabMenu.eq(index).addClass("on");
-
-  // 인덱스에 해당하는 $tabCon 보이기
-  $snsTabCon.hide();
-  $snsTabCon.eq(index).show();
-}
 
 // event swiper(MAIN)
 const $eventTabMenu = $(".event-tab > li");
@@ -303,33 +252,6 @@ if ($(".event-swiper").length) {
   });
 }
 
-/* INQUIRY!!!---------------------------------------------- */
-
-const $faqTabMenu = $(".faq-tab > li");
-const $faqTabCon = $(".info-wrap > ul");
-
-faqTabAction(0);
-
-$faqTabMenu.on("click", function (e) {
-  e.preventDefault();
-
-  const faqTabIdx = $(this).index();
-  console.log(faqTabIdx);
-
-  faqTabAction(faqTabIdx);
-});
-
-// 공통의 동작을 함수로 정의
-function faqTabAction(index) {
-  // 탭메뉴 활성화
-  $faqTabMenu.removeClass("on");
-  $faqTabMenu.eq(index).addClass("on");
-
-  // 인덱스에 해당하는 $tabCon 보이기
-  $faqTabCon.hide();
-  $faqTabCon.eq(index).show();
-}
-
 const $question = $(".info-wrap > ul > li");
 const $answer = $(".answer-wrap");
 
@@ -351,6 +273,37 @@ $question.on("click", function () {
   // 선택한 놈의 자손중 답변을 찾아서 슬라이드 토글
   $(this).find($answer).stop().slideToggle(duration);
 });
+
+/* BUSINESS!!!---------------------------------------------- */
+if ($(".allergie-slider").length) {
+  const allergieSwiper = new Swiper(".allergie-slider", {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+    },
+    pagination: {
+      el: ".allergie-slider-wrap .swiper-pagination",
+      type: "fraction",
+    },
+
+    breakpoints: {
+      1300: {
+        slidesPerView: 8,
+        spaceBetween: 20,
+      },
+      830: {
+        slidesPerView: 6,
+        spaceBetween: 20,
+      },
+      700: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+    },
+  });
+}
 
 /* MAP!!!---------------------------------------------- */
 

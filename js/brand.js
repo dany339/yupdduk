@@ -22,5 +22,6 @@ storyTl.from(".p2", { x: 200 });
 storyTl.from(".p3", { x: 200 });
 storyTl.from(".p4", { x: 200 });
 storyTl.from(".p5", { x: 200 });
+storyTl.from(".p6", { x: 200 });
 
 storyTl.to(".fake", { x: 1, duration: 10 });

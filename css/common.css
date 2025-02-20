@@ -4,13 +4,13 @@
 
 :root {
   font-size: 62.5%;
-  --main-color: #ed1c24;
-  --main-color80: rgba(237, 28, 36, 0.8);
-  --main-color70: rgba(237, 28, 36, 0.7);
-  --main-color60: rgba(237, 28, 36, 0.6);
-  --main-color40: rgba(237, 28, 36, 0.4);
-  --main-color20: rgba(237, 28, 36, 0.2);
-  --main-color10: rgba(237, 28, 36, 0.1);
+  --main-color: #276ef1;
+  --main-color80: rgba(39, 110, 241, 0.8);
+  --main-color70: rgba(39, 110, 241, 0.7);
+  --main-color60: rgba(39, 110, 241, 0.6);
+  --main-color40: rgba(39, 110, 241, 0.4);
+  --main-color20: rgba(39, 110, 241, 0.2);
+  --main-color10: rgba(39, 110, 241, 0.1);
   --title-color: #272727;
   --text-color: #666666;
   --white100: rgba(255, 255, 255, 1);
@@ -309,8 +309,8 @@ nav::before {
 
 .logo a {
   display: block;
-  width: 10rem;
-  height: 6rem;
+  width: 15rem;
+  height: 3.2rem;
   background: url(../img/logo.svg) no-repeat 0 0 / contain;
 }
 
@@ -446,6 +446,24 @@ nav::before {
 .sns-ico-list {
   display: flex;
   gap: 1.2rem;
+}
+
+.btn-instagram {
+  width: 3rem;
+  height: 3rem;
+  background: url(../img/sns-ico-instargram.svg) no-repeat 50% / contain;
+}
+
+.btn-facebook {
+  width: 3rem;
+  height: 3rem;
+  background: url(../img/sns-ico-facebook.svg) no-repeat 50% / contain;
+}
+
+.btn-youtube {
+  width: 3rem;
+  height: 3rem;
+  background: url(../img/sns-ico-youtube.svg) no-repeat 50% / contain;
 }
 
 /* 모바일 메뉴~!!!! */
@@ -623,8 +641,8 @@ nav::before {
 }
 
 .accredit figure {
-  width: 12rem;
-  height: 7.2rem;
+  width: 15rem;
+  height: 3.2rem;
 }
 
 .accredit figure img {
@@ -733,6 +751,125 @@ nav::before {
   z-index: 1;
   color: var(--white100);
   font-size: 1.8rem;
+}
+
+.tip {
+  margin: 12rem 0;
+}
+
+.tip-list {
+  margin-top: 3.125vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.tip-list li {
+  /* border: 1px solid #000; */
+  width: 53.3rem;
+  aspect-ratio: 1/0.9944;
+  flex: 1 0 18%;
+  padding: 3rem;
+  word-break: keep-all;
+  border-radius: 10px;
+  overflow: hidden;
+  background: no-repeat 50% / cover;
+  position: relative;
+  text-align: center;
+}
+
+.tip-list li:hover {
+  justify-content: center;
+}
+
+.tip-list li::after {
+  content: "";
+  transition: 0.7s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tip-list li:hover::after {
+  content: "";
+  height: 100%;
+}
+
+.tip-list li strong {
+  /* font-size: 2.8rem; */
+  font-size: clamp(2rem, 2vw, 2.6rem);
+  font-weight: 700;
+  color: var(--white100);
+  position: relative;
+  z-index: 1;
+  top: 80%;
+  transition: 0.4s;
+}
+
+.tip-list li p {
+  margin-top: 2rem;
+  color: var(--white70);
+  position: relative;
+  z-index: 1;
+  top: 120%;
+}
+
+.tip-list li:hover strong {
+  /* font-size: 3rem; */
+  font-size: clamp(2.2rem, 2vw, 2.8rem);
+  top: 35%;
+}
+
+.tip-list li:hover p {
+  top: 35%;
+  transition: 0.6s;
+}
+
+.reward {
+  margin: 6.25vw 0;
+}
+
+.reward-item {
+  /* margin-top: 3rem; */
+  margin-top: 1.5625vw;
+  display: flex;
+  gap: 2rem;
+}
+
+.reward-item li {
+  width: 100%;
+  gap: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: var(--main-color10);
+  border-radius: 10px;
+  padding: 3.4rem 3rem;
+  word-break: keep-all;
+}
+
+.reward-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.reward-txt p {
+  font-size: 1.8rem;
+}
+
+.reward-item figure {
+  min-width: 9.3rem;
+  aspect-ratio: 1/1;
+  background: var(--white100);
+  border-radius: 50%;
+}
+
+.reward-item li strong {
+  font-weight: 600;
+  color: var(--title-color);
 }
 
 @media (max-width: 1800px) {
@@ -911,5 +1048,34 @@ nav::before {
 
   .sec-title p {
     width: 100%;
+  }
+
+  .reward .sec-title {
+    margin-top: 20.4167vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .tip-list li {
+    width: 100%;
+    aspect-ratio: 1/0.6;
+  }
+
+  .tip-list li:hover strong {
+    top: 20%;
+  }
+
+  .tip-list li:hover p {
+    top: 20%;
+  }
+}
+
+@media (max-width: 425px) {
+  .reward-item li {
+    flex-direction: column;
+  }
+
+  .reward-txt {
+    text-align: center;
   }
 }
