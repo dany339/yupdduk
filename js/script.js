@@ -119,7 +119,7 @@ if ($(".menu-con-slider").length) {
 if ($(".news-swiper").length) {
   const $eventSwiper = new Swiper(".news-swiper", {
     loop: true,
-    slidesPerView: "2",
+    slidesPerView: "1",
     spaceBetween: 20,
     autoplay: {
       delay: 1000,
@@ -138,42 +138,15 @@ if ($(".news-swiper").length) {
         slidesPerView: 3,
         spaceBetween: 20,
       },
+      375: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
     },
   });
 }
 
 /* MENU!!!---------------------------------------------- */
-
-// allergie swiper(MENU)
-if ($(".allergie-slider").length) {
-  const allergieSwiper = new Swiper(".allergie-slider", {
-    slidesPerView: 2,
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-      delay: 2000,
-    },
-    pagination: {
-      el: ".allergie-slider-wrap .swiper-pagination",
-      type: "fraction",
-    },
-
-    breakpoints: {
-      1024: {
-        slidesPerView: 8,
-        spaceBetween: 20,
-      },
-      768: {
-        slidesPerView: 6,
-        spaceBetween: 20,
-      },
-      425: {
-        slidesPerView: 4,
-        spaceBetween: 20,
-      },
-    },
-  });
-}
 
 if ($(".menu-list li")) {
   const $menuList = $(".menu-list");
@@ -277,7 +250,7 @@ $question.on("click", function () {
 /* BUSINESS!!!---------------------------------------------- */
 if ($(".allergie-slider").length) {
   const allergieSwiper = new Swiper(".allergie-slider", {
-    slidesPerView: 3,
+    slidesPerView: 2,
     spaceBetween: 20,
     loop: true,
     autoplay: {
@@ -289,7 +262,7 @@ if ($(".allergie-slider").length) {
     },
 
     breakpoints: {
-      1300: {
+      1440: {
         slidesPerView: 8,
         spaceBetween: 20,
       },

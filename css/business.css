@@ -20,6 +20,71 @@
   background: var(--main-color70);
 }
 
+.vip .sec-title {
+  margin-top: 6.25vw;
+}
+
+.vip-service {
+  margin: 6rem 0 12rem 0;
+  padding: 3rem 12.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-shrink: 0;
+  overflow-x: auto;
+}
+
+.vip-service li {
+  width: 36.9rem;
+  min-width: 22.5rem;
+  aspect-ratio: 1/1;
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  padding: 0 5.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  word-break: keep-all;
+  background: var(--main-color30);
+  box-shadow: 0px 0px 30px rgba(39, 110, 241, 0.25);
+}
+
+.vip-service li:hover {
+  background: var(--main-color);
+}
+
+.vip-service dl {
+  position: relative;
+}
+
+.vip-service dt {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--main-color);
+  transform: translateY(70%);
+  transition: 0.5s;
+}
+
+.vip-service li:hover dt {
+  color: var(--white100);
+  transform: translateY(0);
+}
+
+.vip-service dd {
+  margin-top: 0.3rem;
+  transform: translateY(350%);
+  color: var(--white70);
+  transition: 0.5s;
+}
+
+.vip-service li:hover dd {
+  transform: translateY(0);
+}
+
 .allergie {
   margin: 12rem 0;
 }
@@ -34,12 +99,6 @@
 
 .allergie .swiper-wrapper {
   width: 100%;
-}
-
-.allergie-txt p {
-  margin-top: 2.2727vw;
-  width: 40%;
-  word-break: keep-all;
 }
 
 .allergie-slider {
@@ -102,4 +161,11 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.8rem;
+}
+
+@media (max-width: 1800px) {
+  .vip-service {
+    justify-content: flex-start;
+    padding: 3rem 0;
+  }
 }

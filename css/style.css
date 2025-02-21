@@ -29,7 +29,7 @@
 
 .news {
   /* margin-top: 8.0208vw; */
-  margin-top: 15.4rem;
+  margin: 15.4rem 0 6.25vw 0;
 }
 
 .news-list {
@@ -61,28 +61,4 @@
 
 .news-swiper figure:hover::after {
   opacity: 1;
-}
-
-@media (max-width: 1024px) {
-  .event .view-more {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    border: 2px solid var(--main-color);
-    color: transparent;
-    position: relative;
-  }
-
-  .event .view-more:hover {
-    color: transparent;
-  }
-
-  .event .view-more::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: url(../img/arrow-m-right.png) no-repeat 0% 50%;
-  }
 }
