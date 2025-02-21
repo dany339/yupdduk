@@ -50,18 +50,6 @@ $(document).on("click", function (e) {
   }
 });
 
-// foot family 기능
-if ($(".btn-family").length && $(".family-list").length) {
-  const family = $(".btn-family");
-  const familyList = $(".family-list");
-  const duration = 300;
-
-  family.on("click", function () {
-    familyList.toggleClass("on");
-    familyList.slideToggle(duration);
-  });
-}
-
 // 비주얼 이미지 나타나기~
 gsap.registerPlugin(ScrollTrigger);
 
@@ -127,7 +115,7 @@ if ($(".news-swiper").length) {
 
     breakpoints: {
       1300: {
-        slidesPerView: 6,
+        slidesPerView: 5,
         spaceBetween: 20,
       },
       800: {
@@ -148,6 +136,32 @@ if ($(".news-swiper").length) {
 
 /* MENU!!!---------------------------------------------- */
 
+// menu-tab(MENU)
+const $menuTabMenu = $(".menu-tab > li");
+const $menuTabCon = $(".menu-con");
+
+menuTabAction(0);
+
+$menuTabMenu.on("click", function (e) {
+  e.preventDefault();
+
+  const menuTabIdx = $(this).index();
+  console.log(menuTabIdx);
+
+  menuTabAction(menuTabIdx);
+});
+
+// 공통의 동작을 함수로 정의
+function menuTabAction(index) {
+  // 탭메뉴 활성화
+  $menuTabMenu.removeClass("on");
+  $menuTabMenu.eq(index).addClass("on");
+
+  // 인덱스에 해당하는 $tabCon 보이기
+  $menuTabCon.hide();
+  $menuTabCon.eq(index).show();
+}
+
 if ($(".menu-list li")) {
   const $menuList = $(".menu-list");
   $menuList.on("click", function () {
@@ -166,6 +180,53 @@ $menuItem.on("click", function () {
   // $(this).find($answer).slideDown(duration);
   // 선택한 놈의 자손중 답변을 찾아서 슬라이드 토글
   $(menuList).find($menuItem).stop().slideToggle(duration);
+});
+
+const $faqTabMenu = $(".faq-tab > li");
+const $faqTabCon = $(".info-wrap > ul");
+
+faqTabAction(0);
+
+$faqTabMenu.on("click", function (e) {
+  e.preventDefault();
+
+  const faqTabIdx = $(this).index();
+  console.log(faqTabIdx);
+
+  faqTabAction(faqTabIdx);
+});
+
+// 공통의 동작을 함수로 정의
+function faqTabAction(index) {
+  // 탭메뉴 활성화
+  $faqTabMenu.removeClass("on");
+  $faqTabMenu.eq(index).addClass("on");
+
+  // 인덱스에 해당하는 $tabCon 보이기
+  $faqTabCon.hide();
+  $faqTabCon.eq(index).show();
+}
+
+const $question = $(".info-wrap > ul > li");
+const $answer = $(".answer-wrap");
+
+$question.on("click", function () {
+  // 🚩 $(this)로 구별, siblings()
+
+  // 선택한 놈을 기준으로, 다른 놈들은 on클래스 삭제
+  $(this).siblings().removeClass("on");
+
+  // $(this).addClass("on");
+  // 선택한 놈을 기준으로 on클래스를 토글
+  $(this).toggleClass("on");
+
+  // 선택한 놈의 형제, 하위에 있는 답변은 올리고
+  // stop()  <-- 여러개 예약되어 있어도 한 번만 작동
+  $(this).siblings().find($answer).stop().slideUp(duration);
+
+  // $(this).find($answer).slideDown(duration);
+  // 선택한 놈의 자손중 답변을 찾아서 슬라이드 토글
+  $(this).find($answer).stop().slideToggle(duration);
 });
 
 /* REWARDS!!!---------------------------------------------- */
@@ -225,28 +286,6 @@ if ($(".event-swiper").length) {
   });
 }
 
-const $question = $(".info-wrap > ul > li");
-const $answer = $(".answer-wrap");
-
-$question.on("click", function () {
-  // 🚩 $(this)로 구별, siblings()
-
-  // 선택한 놈을 기준으로, 다른 놈들은 on클래스 삭제
-  $(this).siblings().removeClass("on");
-
-  // $(this).addClass("on");
-  // 선택한 놈을 기준으로 on클래스를 토글
-  $(this).toggleClass("on");
-
-  // 선택한 놈의 형제, 하위에 있는 답변은 올리고
-  // stop()  <-- 여러개 예약되어 있어도 한 번만 작동
-  $(this).siblings().find($answer).stop().slideUp(duration);
-
-  // $(this).find($answer).slideDown(duration);
-  // 선택한 놈의 자손중 답변을 찾아서 슬라이드 토글
-  $(this).find($answer).stop().slideToggle(duration);
-});
-
 /* BUSINESS!!!---------------------------------------------- */
 if ($(".allergie-slider").length) {
   const allergieSwiper = new Swiper(".allergie-slider", {
@@ -263,10 +302,6 @@ if ($(".allergie-slider").length) {
 
     breakpoints: {
       1440: {
-        slidesPerView: 8,
-        spaceBetween: 20,
-      },
-      830: {
         slidesPerView: 6,
         spaceBetween: 20,
       },

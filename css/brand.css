@@ -1,5 +1,53 @@
 @charset 'utf-8';
 
+.vision {
+  box-shadow: 0px 0px 30px var(--main-color15);
+  padding: 5.8rem 0 14.2rem 0;
+}
+
+.vison-title {
+  margin-top: 9rem;
+  text-align: center;
+  position: relative;
+}
+
+.vison-title::before,
+.vison-title::after {
+  content: "";
+  width: 24.6rem;
+  height: 15rem;
+  position: absolute;
+  background: url(../img/decoration-pic1.svg) no-repeat;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.vison-title::before {
+  left: 0;
+}
+
+.vison-title::after {
+  right: 0;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+.vison-title p:nth-child(1) {
+  color: var(--main-color);
+}
+
+.vison-title h4 {
+  font: 8.2rem/1.1 "Poppins", sans-serif;
+  font-size: clamp(4.5rem, 6vw, 8.2rem);
+  font-weight: 600;
+  color: var(--main-color);
+}
+
+.vison-title p {
+  margin: 3rem auto 0 auto;
+  width: 50%;
+  word-break: keep-all;
+}
+
 .vip .sec-title {
   margin-top: 12rem;
 }
@@ -19,7 +67,7 @@
   min-width: 33.5rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  padding: 0 5.4rem;
+  padding: 0 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,17 +77,20 @@
   position: relative;
   cursor: pointer;
   word-break: keep-all;
-  box-shadow: 0px 0px 30px rgba(39, 110, 241, 0.25);
+  box-shadow: 0px 0px 30px rgba(200, 0, 47, 0.25);
 }
 
 .vip-service li:nth-child(1) {
-  background-image: url(../img/vip-pic1.jpg);
+  background-image: url(https://themedicube.co.kr/web/upload/event/ebottle_s1.png);
 }
 .vip-service li:nth-child(2) {
-  background-image: url(../img/vip-pic2.jpg);
+  background-image: url(https://themedicube.co.kr/web/upload/event/ebottle_s2.png);
 }
 .vip-service li:nth-child(3) {
-  background-image: url(../img/vip-pic3.jpg);
+  background-image: url(https://themedicube.co.kr/web/upload/event/ebottle_s3.png);
+}
+.vip-service li:nth-child(4) {
+  background-image: url(https://themedicube.co.kr/web/upload/event/ebottle_img_21.png);
 }
 
 .vip-service li::after {
@@ -67,7 +118,7 @@
   font-size: 3rem;
   font-weight: 700;
   color: var(--white100);
-  transform: translateY(150%);
+  transform: translateY(110%);
   transition: 0.5s;
 }
 
@@ -91,64 +142,50 @@
   flex-direction: column;
 }
 
-.reward-item figure img {
-  object-fit: contain;
-  transform: scale(75%);
+.app-download {
+  margin-top: 15rem;
+  position: relative;
+  /* background: #ff5; */
+  /* padding: 26rem 0 38rem 0; */
 }
 
-.story .inner {
+.add-download-con {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.add-pic {
+  width: 58rem;
+  aspect-ratio: 1/0.931;
   overflow: hidden;
 }
 
-.story {
-  background: url(../img/brand-story-pic.jpg) no-repeat 50% / cover;
-  padding: 21.2rem 0 20rem 0;
-  position: relative;
-  z-index: 1;
+.app-store {
+  display: flex;
+  margin-top: 6rem;
+  gap: 2rem;
 }
 
-.story::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(39, 110, 241, 0.7),
-    rgba(0, 0, 0, 0)
-  );
+.app-store .btn-more-item {
+  background: var(--white100);
 }
 
-.story .sec-title {
-  color: var(--white100);
-  position: relative;
-  z-index: 1;
-}
-
-.story .sec-title strong {
+.app-store a {
+  background: var(--main-color);
   color: var(--white100);
 }
 
-.story .sec-title h3 {
-  width: 50%;
-  word-break: keep-all;
+.app-store a:hover {
+  color: var(--main-color);
 }
 
-.story p {
-  width: 40%;
-  font-size: clamp(1.8rem, 2vw, 2rem);
-  color: var(--white70);
-  word-break: keep-all;
-  margin-top: 2.8rem;
-  position: relative;
-  z-index: 1;
+.app-store a::after {
+  background-image: url(../img/store-ico1.png);
 }
 
-.story p b {
-  font-weight: 600;
-  color: var(--white100);
+.app-store a:hover::after {
+  background-image: url(../img/store-ico1-m.png);
 }
 
 @media (max-width: 1500px) {
@@ -166,7 +203,22 @@
   }
 }
 
+@media (max-width: 1200px) {
+  .add-pic {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
+  .vison-title::before,
+  .vison-title::after {
+    display: none;
+  }
+
+  .vison-title p {
+    width: 80%;
+  }
+
   .reward-txt br {
     display: none;
   }
