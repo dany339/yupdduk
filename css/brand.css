@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
 .vision {
-  box-shadow: 0px 0px 30px var(--main-color15);
+  box-shadow: 0px 0px 30px var(--main-color20);
   padding: 5.8rem 0 14.2rem 0;
 }
 
@@ -58,6 +58,7 @@
   display: flex;
   justify-content: center;
   gap: 10rem;
+  justify-content: flex-start;
   flex-shrink: 0;
   overflow-x: auto;
 }
@@ -149,14 +150,15 @@
   /* padding: 26rem 0 38rem 0; */
 }
 
-.add-download-con {
+.app-download-con {
   display: flex;
   justify-content: space-between;
   gap: 4rem;
 }
 
-.add-pic {
-  width: 58rem;
+.app-pic {
+  width: 30.2083vw;
+  min-width: 34.5rem;
   aspect-ratio: 1/0.931;
   overflow: hidden;
 }
@@ -188,23 +190,18 @@
   background-image: url(../img/store-ico1-m.png);
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1200px) {
   .vip-service {
-    justify-content: flex-start;
     gap: 5rem;
-  }
-
-  .story .sec-title h3 {
-    width: 100%;
-  }
-
-  .story p {
-    width: 90%;
   }
 }
 
-@media (max-width: 1200px) {
-  .add-pic {
+@media (max-width: 880px) {
+  .app-download {
+    margin: 12rem 0;
+  }
+
+  .app-pic {
     display: none;
   }
 }
@@ -221,15 +218,5 @@
 
   .reward-txt br {
     display: none;
-  }
-
-  .story p {
-    width: 100%;
-  }
-}
-
-@media (max-width: 425px) {
-  .story .sec-title h3 {
-    font-size: 2.7rem;
   }
 }
