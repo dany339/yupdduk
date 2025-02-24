@@ -1,222 +1,237 @@
 @charset 'utf-8';
 
-.vision {
-  box-shadow: 0px 0px 30px var(--main-color20);
-  padding: 5.8rem 0 14.2rem 0;
+.faq {
+  margin: 12rem 0 6.25vw 0;
 }
 
-.vison-title {
-  margin-top: 9rem;
-  text-align: center;
-  position: relative;
-}
-
-.vison-title::before,
-.vison-title::after {
-  content: "";
-  width: 24.6rem;
-  height: 15rem;
-  position: absolute;
-  background: url(../img/decoration-pic1.svg) no-repeat;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.vison-title::before {
-  left: 0;
-}
-
-.vison-title::after {
-  right: 0;
-  transform: translateY(-50%) scaleX(-1);
-}
-
-.vison-title p:nth-child(1) {
-  color: var(--main-color);
-}
-
-.vison-title h4 {
-  font: 8.2rem/1.1 "Poppins", sans-serif;
-  font-size: clamp(4.5rem, 6vw, 8.2rem);
-  font-weight: 600;
-  color: var(--main-color);
-}
-
-.vison-title p {
-  margin: 3rem auto 0 auto;
-  width: 50%;
-  word-break: keep-all;
-}
-
-.vip .sec-title {
-  margin-top: 12rem;
-}
-
-.vip-service {
-  margin: 6rem 0 12rem 0;
-  padding: 3rem;
+.faq-wrap {
   display: flex;
-  justify-content: center;
-  gap: 10rem;
   justify-content: flex-start;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.faq-tab {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-size: clamp(2.4rem, 3vw, 3rem);
+  font-weight: 700;
+  gap: 2rem;
+  margin-top: 3.125vw;
   flex-shrink: 0;
   overflow-x: auto;
 }
 
-.vip-service li {
-  width: 36.9rem;
-  min-width: 33.5rem;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  padding: 0 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-  background: no-repeat 50% / cover;
-  position: relative;
+.faq-tab li {
   cursor: pointer;
-  word-break: keep-all;
-  box-shadow: 0px 0px 30px rgba(200, 0, 47, 0.25);
+  white-space: nowrap;
 }
 
-.vip-service li:nth-child(1) {
-  background-image: url(https://themedicube.co.kr/web/upload/event/ebottle_s1.png);
-}
-.vip-service li:nth-child(2) {
-  background-image: url(https://themedicube.co.kr/web/upload/event/ebottle_s2.png);
-}
-.vip-service li:nth-child(3) {
-  background-image: url(https://themedicube.co.kr/web/upload/event/ebottle_s3.png);
-}
-.vip-service li:nth-child(4) {
-  background-image: url(https://themedicube.co.kr/web/upload/event/ebottle_img_21.png);
+.faq-tab li:hover {
+  color: var(--main-color);
+  transition: 0.3s;
 }
 
-.vip-service li::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: 0.4s;
-  background: var(--black10);
+.faq-tab li.on {
+  color: var(--main-color);
+  transition: 0.3s;
 }
 
-.vip-service li:hover::after {
-  content: "";
-  background: var(--main-color);
-}
-
-.vip-service dl {
-  position: relative;
-  z-index: 1;
-}
-
-.vip-service dt {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--white100);
-  transform: translateY(110%);
-  transition: 0.5s;
-}
-
-.vip-service li:hover dt {
-  color: var(--white100);
-  transform: translateY(0);
-}
-
-.vip-service dd {
-  margin-top: 2.3rem;
-  transform: translateY(350%);
-  color: var(--white70);
-  transition: 0.5s;
-}
-
-.vip-service li:hover dd {
-  transform: translateY(0);
-}
-
-.reward-item {
-  flex-direction: column;
-}
-
-.app-download {
-  margin-top: 15rem;
-  position: relative;
-  /* background: #ff5; */
-  /* padding: 26rem 0 38rem 0; */
-}
-
-.app-download-con {
-  display: flex;
-  justify-content: space-between;
-  gap: 4rem;
-}
-
-.app-pic {
-  width: 30.2083vw;
-  min-width: 34.5rem;
-  aspect-ratio: 1/0.931;
-  overflow: hidden;
-}
-
-.app-store {
-  display: flex;
-  margin-top: 6rem;
-  gap: 2rem;
-}
-
-.app-store .btn-more-item {
-  background: var(--white100);
-}
-
-.app-store a {
-  background: var(--main-color);
-  color: var(--white100);
-}
-
-.app-store a:hover {
+.faq-tab.on {
   color: var(--main-color);
 }
 
-.app-store a::after {
-  background-image: url(../img/store-ico1.png);
+.info-wrap li {
+  border-top: 2px solid var(--black20);
+  padding: 3rem 3.5rem;
+  position: relative;
+  width: 100%;
+  cursor: pointer;
 }
 
-.app-store a:hover::after {
-  background-image: url(../img/store-ico1-m.png);
+.info-wrap li:first-child {
+  border-top: 4px solid var(--main-color);
 }
 
-@media (max-width: 1200px) {
-  .vip-service {
-    gap: 5rem;
-  }
+.info-wrap li:last-child {
+  border-bottom: 2px solid var(--black20);
 }
 
-@media (max-width: 880px) {
-  .app-download {
-    margin: 12rem 0;
-  }
-
-  .app-pic {
-    display: none;
-  }
+.info-wrap li.on {
+  background: var(--main-color10);
 }
 
-@media (max-width: 768px) {
-  .vison-title::before,
-  .vison-title::after {
-    display: none;
-  }
+.info-wrap li::after {
+  content: "";
+  position: absolute;
+  top: 3rem;
+  right: 3%;
+  width: 4rem;
+  aspect-ratio: 1/1;
+  background: url(../img/arrow-m-bottom.png) no-repeat 50%;
+  transition: 0.4s;
+}
 
-  .vison-title p {
-    width: 80%;
-  }
+.info-wrap li.on::after {
+  rotate: -180deg;
+}
 
-  .reward-txt br {
-    display: none;
+.faq-title {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.faq-title i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--white100);
+  background: var(--main-color);
+}
+
+.faq-txt {
+  width: 80%;
+}
+
+.faq-txt h4 {
+  font-size: clamp(2.2rem, 2vw, 3rem);
+  font-weight: 700;
+  color: var(--title-color);
+  word-break: keep-all;
+}
+
+.answer-wrap {
+  margin-top: 4rem;
+  display: none;
+  font-size: 1.8rem;
+  word-break: keep-all;
+}
+
+.answer-con {
+  display: flex;
+  gap: 3rem;
+}
+
+.card-benefit {
+  padding: 10.6rem 0 10.2rem 0;
+  background: var(--main-color);
+}
+
+.card-reward {
+  padding: 10.6rem 0 10.2rem 0;
+  background: var(--main-color);
+}
+
+.card-reward .sec-title,
+.card-reward strong {
+  color: var(--white100);
+}
+
+.app-con {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2.8rem;
+  gap: 2rem;
+}
+
+.app-icon {
+  width: 41.7rem;
+  height: 29.6rem;
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+  justify-content: center;
+  background: var(--white10);
+  border-radius: 10px;
+  padding: 5rem 4rem;
+  position: relative;
+}
+
+.app-icon:hover {
+  box-shadow: 0 0 10px rgba(250, 255, 242, 0.6);
+  transition: box-shadow 0.3s ease;
+}
+
+.app-icon dl::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9.5rem;
+  aspect-ratio: 1/1.0526;
+  background: no-repeat 50%;
+}
+
+.boomerang-icon dl::before {
+  width: 6.5rem;
+}
+
+.app-icon dl.app-ico1::before {
+  background-image: url(../img/app-ico1.png);
+}
+
+.app-icon dl.app-ico2::before {
+  background-image: url(../img/app-ico2.png);
+}
+
+.app-icon dl.app-ico3::before {
+  background-image: url(../img/app-ico3.png);
+}
+
+.app-icon dl.app-ico4::before {
+  background-image: url(../img/app-ico4.png);
+}
+
+.app-icon dl.app-ico5::before {
+  background-image: url(../img/app-ico5.png);
+}
+
+.app-icon dl.app-ico6::before {
+  background-image: url(../img/app-ico6.png);
+}
+
+.app-icon dl.app-ico7::before {
+  background-image: url(../img/app-ico7.png);
+}
+
+.app-icon dl.app-ico8::before {
+  background-image: url(../img/app-ico8.png);
+}
+
+.app-icon dl.app-ico9::before {
+  background-image: url(../img/app-ico9.png);
+}
+
+.app-icon dl dt {
+  font-size: 3rem;
+  font-size: clamp(2.4rem, 6vw, 3rem);
+  font-weight: 700;
+  color: var(--white100);
+  margin-top: 1rem;
+}
+
+.app-icon dl dd {
+  margin-top: 1.2rem;
+  color: var(--white70);
+  word-break: keep-all;
+}
+
+.card-benefit .app-icon dl dd {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .app-icon {
+    width: 96vw;
   }
 }
